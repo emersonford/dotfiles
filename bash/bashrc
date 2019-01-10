@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# .bashrc - load all of the dotfiles
+
+load_dotfiles() {
+    declare -a files=(
+        $HOME/.dotfiles/bash/bash_aliases 
+        $HOME/.dotfiles/bash/bash_exports 
+        $HOME/.dotfiles/bash/bash_local 
+        $HOME/.dotfiles/bash/bash_paths 
+        $HOME/.dotfiles/bash/bash_prompt 
+    )
+
+    # if these files are readable, source them
+    for index in ${!files[*]}
+    do
+        if [[ -r ${files[$index]} ]]; then
+            source ${files[$index]}
+        fi
+    done
+}
+
+load_dotfiles
+unset load_dotfiles

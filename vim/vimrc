@@ -1,0 +1,134 @@
+" VIM Settings
+set noerrorbells
+set nocompatible              " be iMproved, required
+
+" settings
+" tabbing settings
+" No line wrapping
+set nowrap
+" Use 2 spaces for indentation
+set shiftwidth=2
+" Use 2 spaces for soft tab
+set softtabstop=2
+" Use 2 spaces for tab
+set tabstop=2
+" Expand tab to spaces
+set expandtab
+
+" turn hybrid line numbers on
+:set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
+set backspace=indent,eol,start  " Makes backspace key more powerful.
+set showcmd                     " Show me what I'm typing
+set showmode                    " Show current mode.
+
+set noswapfile                  " Don't use swapfile
+set nobackup					          " Don't create annoying backup files
+set nowritebackup
+set splitright                  " Split vertical windows right to the current windows
+set splitbelow                  " Split horizontal windows below to the current windows
+set encoding=utf-8              " Set default encoding to UTF-8
+set autowrite                   " Automatically save before :next, :make etc.
+set autoread                    " Automatically reread changed files without asking me anything
+set ttyfast
+
+if has("autocmd")
+    " Load files for specific filetypes
+    filetype on
+    filetype indent on
+    filetype plugin on
+
+    " Languages with specific tabs/space requirements
+    autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+    " Automatically strip trailing whitespace on file save
+    autocmd BufWritePre *.css,*.html,*.js,*.json,*.md,*.php,*.py,*.rb,*.scss,*.sh,*.txt :call StripWhitespace()
+    " Don't treat json as javascript
+    autocmd BufRead,BufNewFile *.json set filetype=json
+endif
+
+if has("wildmenu")
+    " Show a list of possible completions
+    set wildmenu
+    " Tab autocomplete longest possible part of a string, then list
+    set wildmode=longest,list
+    if has ("wildignore")
+        set wildignore+=*.a,*.pyc,*.o,*.orig
+        set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png
+        set wildignore+=.DS_Store,.git,.hg,.svn
+        set wildignore+=*~,*.sw?,*.tmp
+    endif
+endif
+
+if has("extra_search")
+    " Highlight searches [use :noh to clear]
+    set hlsearch
+    " Highlight dynamically as pattern is typed
+    set incsearch
+    " Ignore case of searches...
+    set ignorecase
+    " ...unless has mixed case
+    set smartcase
+endif
+
+" PLUGINS
+"
+call plug#begin()
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'godlygeek/tabular'
+Plug 'raimondi/delimitmate'
+Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
+
+if has('statusline')
+    " Always show status line
+    set laststatus=2
+    " Broken down into easily includeable segments
+    " Filename
+    set statusline=%<%f\
+    " Options
+    set statusline+=%w%h%m%r
+    " Current dir
+    set statusline+=\ [%{getcwd()}]
+    " Right aligned file nav info
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%
+endif
+
+" customize solarized dark
+set t_Co=256
+syntax on
+set background=dark
+colorscheme solarized
+
+" NerdTree configurations
+map <C-o> :NERDTreeToggle<CR>
+
+" set airline to solarized dark
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+
+" Settings for syntastic
+set statusline+=%{FugitiveStatusline()}
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

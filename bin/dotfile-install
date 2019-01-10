@@ -4,6 +4,58 @@ DOTFILES_DIRECTORY="${HOME}/.dotfiles"
 DOTFILES_TARBALL_PATH="https://github.com/emersonford/dotfiles/tarball/master"
 DOTFILES_GIT_REMOTE="git@github.com:emersonford/dotfiles.git"
 
+# Helper Functions
+# Header logging
+e_header() {
+    printf "\n$(tput setaf 7)%s$(tput sgr0)\n" "$@"
+}
+
+# Success logging
+e_success() {
+    printf "$(tput setaf 64)✓ %s$(tput sgr0)\n" "$@"
+}
+
+# Error logging
+e_error() {
+    printf "$(tput setaf 1)x %s$(tput sgr0)\n" "$@"
+}
+
+# Warning logging
+e_warning() {
+    printf "$(tput setaf 136)! %s$(tput sgr0)\n" "$@"
+}
+
+# Ask for confirmation before proceeding
+seek_confirmation() {
+    printf "\n"
+    e_warning "$@"
+    read -p "Continue? (y/n) " -n 1
+    printf "\n"
+}
+
+# Test whether the result of an 'ask' is a confirmation
+is_confirmed() {
+    if [[ "$REPLY" =~ ^[Yy]$ ]]; then
+      return 0
+    fi
+    return 1
+}
+
+# Test whether we're in a git repo
+is_git_repo() {
+    $(git rev-parse --is-inside-work-tree &> /dev/null)
+}
+
+# Test whether a command exists
+# $1 - cmd to test
+type_exists() {
+    if [ $(type -P $1) ]; then
+      return 0
+    fi
+    return 1
+}
+
+## Main Code
 # If missing, download and extract the dotfiles repository
 if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
     printf "$(tput setaf 7)Downloading dotfiles...\033[m\n"
@@ -58,19 +110,15 @@ mirrorfiles() {
         rm -rf "${HOME}/.vim"
     fi
 
-    # CHPC Specific Files
-
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory. The `bash_profile` sources other files directly from the
     # `.dotfiles` repository.
-    link "shell/bashrc"       ".bashrc"
-    link "shell/bash_profile" ".bash_profile"
-    link "shell/curlrc"       ".curlrc"
-    link "shell/inputrc"      ".inputrc"
+    link "bash/bashrc"       ".bashrc"
+    link "bash/bash_profile" ".bash_profile"
+    link "bash/inputrc"      ".inputrc"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
     link "vim"                ".vim"
-    link "vim/gvimrc"         ".gvimrc"
     link "vim/vimrc"          ".vimrc"
 
     e_success "Dotfiles update complete!"

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export TERM=xterm-256color
 DOTFILES_DIRECTORY="${HOME}/.dotfiles"
 DOTFILES_TARBALL_PATH="https://github.com/emersonford/dotfiles/tarball/master"
 DOTFILES_GIT_REMOTE="git@github.com:emersonford/dotfiles.git"

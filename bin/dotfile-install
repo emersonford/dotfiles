@@ -97,7 +97,7 @@ mirrorfiles() {
     # `.dotfiles` repository.
     link "bash/bashrc"       ".bashrc"
     link "bash/bash_profile" ".bash_profile"
-    link "bash/inputrc"      ".inputrc"
+    link "input/inputrc"      ".inputrc"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
     link "vim"                ".vim"

@@ -2,6 +2,9 @@
 
 # .bashrc - load all of the dotfiles
 
+# Do not do anything if it's a non interactive shell.
+[ -z "$PS1" ] && return
+
 load_dotfiles() {
     declare -a files=(
         $HOME/.dotfiles/bash/bash_aliases

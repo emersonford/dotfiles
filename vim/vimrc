@@ -89,6 +89,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'godlygeek/tabular'
 Plug 'raimondi/delimitmate'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 if has('statusline')

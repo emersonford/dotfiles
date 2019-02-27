@@ -92,4 +92,8 @@ mirrorfiles() {
 }
 
 mirrorfiles
+
+# Install vim plugins.
+vim +PlugInstall
+
 source ${HOME}/.bash_profile

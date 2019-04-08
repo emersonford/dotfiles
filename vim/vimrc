@@ -1,6 +1,6 @@
 " VIM Settings
 set noerrorbells
-set nocompatible              " be iMproved, required
+set nocompatible
 
 " settings
 " tabbing settings
@@ -75,21 +75,38 @@ endif
 " PLUGINS
 "
 call plug#begin()
+" Helps avoid trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
+" Sensible Vim defaults
 Plug 'tpope/vim-sensible'
+" Managing Git better inside of Vim
 Plug 'tpope/vim-fugitive'
+" Managing quotes, parenthesis, etc in pairs
 Plug 'tpope/vim-surround'
+" Managing syntax highlighting and linting
 Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdcommenter'
+" For better comment management in Vim
+" Plug 'scrooloose/nerdcommenter'
+" For file navigation in Vim
 Plug 'scrooloose/nerdtree'
+" For better Git inside of Nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" Fancier bottom bar in Vim
 Plug 'vim-airline/vim-airline'
+" Themes for Vim Airline
 Plug 'vim-airline/vim-airline-themes'
+" For solarized-dark in Vim
 Plug 'altercation/vim-colors-solarized'
+" For text alignment
 Plug 'godlygeek/tabular'
+" For auto closing of quotes, parenthesis, brackets, etc.
 Plug 'raimondi/delimitmate'
+" For better Vim-Tmux Integration
 Plug 'christoomey/vim-tmux-navigator'
+" For Rust
 Plug 'rust-lang/rust.vim'
+" For LaTeX
+Plug 'lervag/vimtex'
 call plug#end()
 
 if has('statusline')
@@ -129,3 +146,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Settings for Vimtex
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'

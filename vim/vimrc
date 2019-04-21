@@ -98,7 +98,7 @@ Plug 'vim-airline/vim-airline-themes'
 " For solarized-dark in Vim
 Plug 'altercation/vim-colors-solarized'
 " For text alignment
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 " For auto closing of quotes, parenthesis, brackets, etc.
 Plug 'raimondi/delimitmate'
 " For better Vim-Tmux Integration
@@ -107,6 +107,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'rust-lang/rust.vim'
 " For LaTeX
 Plug 'lervag/vimtex'
+" Navigate VIM easier.
+" Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 if has('statusline')

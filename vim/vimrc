@@ -108,7 +108,7 @@ Plug 'rust-lang/rust.vim'
 " For LaTeX
 Plug 'lervag/vimtex'
 " Navigate VIM easier.
-" Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 if has('statusline')

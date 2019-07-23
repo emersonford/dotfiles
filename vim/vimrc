@@ -1,68 +1,35 @@
 " VIM Settings
 set noerrorbells
 set nocompatible
+set hidden
 
 " settings
-" tabbing settings
-" No line wrapping
-set nowrap
-" Use 2 spaces for indentation
-set shiftwidth=2
-" Use 2 spaces for soft tab
-set softtabstop=2
-" Use 2 spaces for tab
-set tabstop=2
-" Expand tab to spaces
-set expandtab
-
 " turn hybrid line numbers on
 :set number relativenumber
 
+" relative numbers
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
+set shiftwidth=2    " two spaces per indent
+set tabstop=2       " number of spaces per tab in display
+set softtabstop=2   " number of spaces per tab when inserting
+set expandtab       " substitute spaces for tabs
+set autoindent      " carry indent over to new lines
+
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode.
 
-set noswapfile                  " Don't use swapfile
-set nobackup					          " Don't create annoying backup files
-set nowritebackup
 set splitright                  " Split vertical windows right to the current windows
 set splitbelow                  " Split horizontal windows below to the current windows
 set encoding=utf-8              " Set default encoding to UTF-8
 set autowrite                   " Automatically save before :next, :make etc.
 set autoread                    " Automatically reread changed files without asking me anything
 set ttyfast
-
-if has("autocmd")
-    " Load files for specific filetypes
-    filetype on
-    filetype indent on
-    filetype plugin on
-
-    " Rust configurations
-    autocmd BufNewFile,BufRead *.rs set filetype=rust
-
-    " Languages with specific tabs/space requirements
-    autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
-endif
-
-if has("wildmenu")
-    " Show a list of possible completions
-    set wildmenu
-    " Tab autocomplete longest possible part of a string, then list
-    set wildmode=longest,list
-    if has ("wildignore")
-        set wildignore+=*.a,*.pyc,*.o,*.orig
-        set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png
-        set wildignore+=.DS_Store,.git,.hg,.svn
-        set wildignore+=*~,*.sw?,*.tmp
-    endif
-endif
 
 if has("extra_search")
     " Highlight searches [use :noh to clear]
@@ -77,42 +44,7 @@ endif
 
 " PLUGINS
 "
-call plug#begin()
-" Helps avoid trailing whitespace
-Plug 'ntpeters/vim-better-whitespace'
-" Sensible Vim defaults
-Plug 'tpope/vim-sensible'
-" Managing Git better inside of Vim
-Plug 'tpope/vim-fugitive'
-" Managing quotes, parenthesis, etc in pairs
-Plug 'tpope/vim-surround'
-" Managing syntax highlighting and linting
-Plug 'scrooloose/syntastic'
-" For better comment management in Vim
-" Plug 'scrooloose/nerdcommenter'
-" For file navigation in Vim
-Plug 'scrooloose/nerdtree'
-" For better Git inside of Nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" Fancier bottom bar in Vim
-Plug 'vim-airline/vim-airline'
-" Themes for Vim Airline
-Plug 'vim-airline/vim-airline-themes'
-" For solarized-dark in Vim
-Plug 'altercation/vim-colors-solarized'
-" For text alignment
-" Plug 'godlygeek/tabular'
-" For auto closing of quotes, parenthesis, brackets, etc.
-Plug 'raimondi/delimitmate'
-" For better Vim-Tmux Integration
-Plug 'christoomey/vim-tmux-navigator'
-" For Rust
-Plug 'rust-lang/rust.vim'
-" For LaTeX
-Plug 'lervag/vimtex'
-" Navigate VIM easier.
-Plug 'easymotion/vim-easymotion'
-call plug#end()
+execute pathogen#infect()
 
 if has('statusline')
     " Always show status line
@@ -128,32 +60,85 @@ if has('statusline')
     set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 endif
 
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " customize solarized dark
 set t_Co=256
 syntax on
 set background=dark
 colorscheme solarized
 
-" NerdTree configurations
-map <C-o> :NERDTreeToggle<CR>
+" Tagbar configurations
+map <F8> :TagbarToggle<CR>
+
+" Disable arrow keys
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+" Buffer shortcuts
+nmap gn :bn<cr>
+nmap gp :bp<cr>
+nmap gc :bd<cr>
+nmap gb :b#<cr>
+nmap gq :bp <BAR> bd #<CR>
+
+" Move to next displayed line instead of actual line
+nnoremap j gj
+nnoremap k gk
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+" Bufexplorer Maps
+let g:bufExplorerDisableDefaultKeyMapping=1
+nnoremap <silent> <Leader>b :BufExplorer<CR>
 
 " set airline to solarized dark
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
+let g:airline#extensions#ale#enabled = 1
 
-" Settings for syntastic
-set statusline+=%{FugitiveStatusline()}
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Keep all folds open when a file is opened
+augroup OpenAllFoldsOnFileOpen
+    autocmd!
+    autocmd BufRead * normal zR
+augroup END
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Set color column for Python
+augroup python
+	au!
+	autocmd FileType python set colorcolumn=81
+augroup END
 
-" Settings for Vimtex
-let g:tex_flavor='latex'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
+" Set CtrlP to \t
+let g:ctrlp_map = '<leader>t'
+
+" IDE like features
+if v:version >= 800
+  " Format when we save
+  let g:ale_fix_on_save = 1
+  let g:ale_lint_on_enter = 1
+  let g:ale_python_flake8_use_global=1
+  let g:ale_python_isort_use_global=1
+  let g:ale_python_pyls_use_global=1
+  let g:ale_echo_msg_format = '[%linter%] %s'
+  let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['isort', 'black']}
+  let g:ale_completion_enabled = 1
+
+  nnoremap <silent> K :ALEHover<CR>
+  nnoremap <silent> gd :ALEGoToDefinition<CR>
+  nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
+
+  " show type on hover
+  if v:version >= 801
+    set balloonevalterm
+    let g:ale_set_balloons = 1
+  endif
+endif

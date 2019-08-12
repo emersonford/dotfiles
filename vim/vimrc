@@ -75,6 +75,9 @@ colorscheme solarized
 " Tagbar configurations
 map <F8> :TagbarToggle<CR>
 
+" Disable vim-polyglot for Latex for vimtex
+let g:polyglot_disabled = ['latex']
+
 " Disable arrow keys
 noremap <Up> <nop>
 noremap <Down> <nop>
@@ -84,7 +87,6 @@ noremap <Right> <nop>
 " Buffer shortcuts
 nmap gn :bn<cr>
 nmap gp :bp<cr>
-nmap gc :bd<cr>
 nmap gb :b#<cr>
 nmap gq :bp <BAR> bd #<CR>
 

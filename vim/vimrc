@@ -111,12 +111,6 @@ augroup OpenAllFoldsOnFileOpen
     autocmd BufRead * normal zR
 augroup END
 
-" Set color column for Python
-augroup python
-	au!
-	autocmd FileType python set colorcolumn=81
-augroup END
-
 " Set CtrlP to \t
 let g:ctrlp_map = '<leader>t'
 

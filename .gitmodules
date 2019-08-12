@@ -58,3 +58,6 @@
 [submodule "vim/bundle/tex-conceal.vim"]
 	path = vim/bundle/tex-conceal.vim
 	url = https://github.com/KeitaNakamura/tex-conceal.vim.git
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat

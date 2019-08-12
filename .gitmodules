@@ -55,3 +55,6 @@
 [submodule "vim/bundle/vimtex"]
 	path = vim/bundle/vimtex
 	url = https://github.com/lervag/vimtex.git
+[submodule "vim/bundle/tex-conceal.vim"]
+	path = vim/bundle/tex-conceal.vim
+	url = https://github.com/KeitaNakamura/tex-conceal.vim.git

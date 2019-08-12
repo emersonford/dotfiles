@@ -19,6 +19,7 @@ set tabstop=2       " number of spaces per tab in display
 set softtabstop=2   " number of spaces per tab when inserting
 set expandtab       " substitute spaces for tabs
 set autoindent      " carry indent over to new lines
+set modelines=0
 
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing
@@ -44,7 +45,9 @@ endif
 
 " PLUGINS
 "
+filetype off
 execute pathogen#infect()
+filetype plugin indent on
 
 if has('statusline')
     " Always show status line
@@ -67,16 +70,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " customize solarized dark
-set t_Co=256
 syntax on
+set t_Co=256
 set background=dark
 colorscheme solarized
 
 " Tagbar configurations
 map <F8> :TagbarToggle<CR>
-
-" Disable vim-polyglot for Latex for vimtex
-let g:polyglot_disabled = ['latex']
 
 " Disable arrow keys
 noremap <Up> <nop>

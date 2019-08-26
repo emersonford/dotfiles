@@ -94,10 +94,6 @@ nmap gq :bp <BAR> bd #<CR>
 nnoremap j gj
 nnoremap k gk
 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
-
 " Bufexplorer Maps
 let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <silent> <Leader>b :BufExplorer<CR>
@@ -117,16 +113,12 @@ augroup END
 let g:ctrlp_map = '<leader>t'
 
 " Ultisnip things
-let g:UltiSnipsSnippetDirectories = ['~/.vim/ultisnips']
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-" Deoplete settings
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#option('sources', {
-" \ '_': ['ale', 'ultisnips'],
-" \})
-" call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
-
-" IDE like features
+" IDE like features for ALE
 if v:version >= 800
   " Format when we save
   let g:ale_fix_on_save = 1
@@ -144,3 +136,10 @@ if v:version >= 800
     let g:ale_set_balloons = 1
   endif
 endif
+
+" Deoplete settings
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#option('sources', {
+" \ '_': ['ale', 'ultisnips'],
+" \})
+" call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])

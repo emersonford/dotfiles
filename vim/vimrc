@@ -116,6 +116,9 @@ augroup END
 " Set CtrlP to \t
 let g:ctrlp_map = '<leader>t'
 
+" Ultisnip things
+let g:UltiSnipsSnippetDirectories = ['~/.vim/ultisnips']
+
 " IDE like features
 if v:version >= 800
   " Format when we save

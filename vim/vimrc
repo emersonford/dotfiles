@@ -137,6 +137,10 @@ if v:version >= 800
   endif
 endif
 
+" Vimux settings
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+
 " Deoplete settings
 " let g:deoplete#enable_at_startup = 1
 " call deoplete#custom#option('sources', {

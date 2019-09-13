@@ -64,3 +64,9 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "vim/bundle/grep.vim"]
+	path = vim/bundle/grep.vim
+	url = https://github.com/vim-scripts/grep.vim
+[submodule "vim/bundle/vimux"]
+	path = vim/bundle/vimux
+	url = https://github.com/benmills/vimux

@@ -109,9 +109,6 @@ augroup OpenAllFoldsOnFileOpen
     autocmd BufRead * normal zR
 augroup END
 
-" Set CtrlP to \t
-let g:ctrlp_map = '<leader>t'
-
 " Ultisnip things
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
 let g:UltiSnipsExpandTrigger = '<tab>'

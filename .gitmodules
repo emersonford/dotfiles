@@ -73,3 +73,6 @@
 [submodule "vim/bundle/fzf"]
 	path = vim/bundle/fzf
 	url = https://github.com/junegunn/fzf
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = https://github.com/wincent/command-t.git

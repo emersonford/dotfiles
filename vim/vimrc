@@ -138,12 +138,6 @@ endif
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 
-" Rebind so we don't have to hold shift for :w
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
-
 " Deoplete settings
 " let g:deoplete#enable_at_startup = 1
 " call deoplete#custom#option('sources', {

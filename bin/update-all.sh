@@ -1,6 +1,6 @@
 #!/bin/bash
 
-hosts=(home fm-test miyako notchpeak.chpc.utah.edu cade hacktheu-main hacktheu-bigboi hacktheu-development)
+hosts=(home fm-test miyako notchpeak.chpc.utah.edu cade hacktheu-main hacktheu-bigboi)
 
 for i in ${hosts[@]}; do
   echo "updating $i"

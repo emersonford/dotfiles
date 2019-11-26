@@ -14,9 +14,9 @@ set hidden
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-set shiftwidth=2    " two spaces per indent
-set tabstop=2       " number of spaces per tab in display
-set softtabstop=2   " number of spaces per tab when inserting
+set shiftwidth=4    " two spaces per indent
+set tabstop=4       " number of spaces per tab in display
+set softtabstop=4   " number of spaces per tab when inserting
 set expandtab       " substitute spaces for tabs
 set autoindent      " carry indent over to new lines
 set modelines=0

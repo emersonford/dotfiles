@@ -19,7 +19,7 @@ set tabstop=4       " number of spaces per tab in display
 set softtabstop=4   " number of spaces per tab when inserting
 set expandtab       " substitute spaces for tabs
 set autoindent      " carry indent over to new lines
-set modelines=0
+" set modelines=0
 
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing

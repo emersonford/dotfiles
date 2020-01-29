@@ -43,9 +43,6 @@
 [submodule "vim/bundle/delimitmate"]
 	path = vim/bundle/delimitmate
 	url = https://github.com/raimondi/delimitmate
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
@@ -70,12 +67,9 @@
 [submodule "vim/bundle/vimux"]
 	path = vim/bundle/vimux
 	url = https://github.com/benmills/vimux
-[submodule "vim/bundle/fzf"]
-	path = vim/bundle/fzf
-	url = https://github.com/junegunn/fzf
-[submodule "vim/bundle/--force"]
-	path = vim/bundle/--force
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "vim/bundle/Nvim-R"]
 	path = vim/bundle/Nvim-R
 	url = https://github.com/jalvesaq/Nvim-R.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git

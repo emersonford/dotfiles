@@ -5,7 +5,7 @@ snippet beg "begin{} / end{}" bA
 endsnippet
 
 snippet mk "Math" wA
-$${1}$`!p
+\(${1}\)`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
     snip.rv = ' '
 else:
@@ -43,7 +43,7 @@ snip.rv = eval('latex(' + match.group(1).replace('\\', '') \
 endsnippet
 
 priority 10000
-snippet '= (.*) =' "evaluate sympy latex" wr
+snippet '= (.*?) =' "evaluate sympy latex" wr
 `!p
 from sympy import *
 from sympy.parsing import latex
@@ -54,5 +54,21 @@ init_printing()
 
 expr = latex.parse_latex(match.group(1))
 snip.rv = "= " + match.group(1) + " = " + str(expr.evalf(6))
+`
+endsnippet
+
+priority 10000
+snippet '([^$]*?) \\pm (.*?) =' "evaluate plusminus sympy latex" wr
+`!p
+from sympy import *
+from sympy.parsing import latex
+x, y, z, t = symbols('x y z t')
+k, m, n = symbols('k m n', integer=True)
+f, g, h = symbols('f g h', cls=Function)
+init_printing()
+
+exprplus = latex.parse_latex(match.group(1) + " + " + match.group(2))
+exprminus = latex.parse_latex(match.group(1) + " - " + match.group(2))
+snip.rv = match.group(0) + " (" + str(exprminus.evalf(6)) + ", " + str(exprplus.evalf(6)) + ")"
 `
 endsnippet

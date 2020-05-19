@@ -73,3 +73,10 @@
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/pack/colors/opt/onehalf"]
+	path = vim/pack/colors/opt/onehalf
+	url = https://github.com/sonph/onehalf.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty

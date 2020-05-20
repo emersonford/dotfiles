@@ -22,3 +22,4 @@
   - [git clean -f, Cleanup any dangling files]
   - [chsh -s $(which zsh), Set shell to zsh]
   - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin -y, Installing Starship prompt]
+  # - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin --platform unknown-linux-musl -y, Installing Starship prompt]

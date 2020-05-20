@@ -11,6 +11,7 @@
     ~/.vimrc: vim/vimrc
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
+    ~/.inputrc: input/inputrc
     ~/.zshrc: zsh/zshrc
 
 - create:

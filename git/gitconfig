@@ -144,3 +144,7 @@
 [user]
     name = "Emerson Ford"
     email = "emersontford@gmail.com"
+
+# Allow local customizations in the .gitconfig_local file
+[include]
+	path = "$HOME/.dotfiles/git/gitconfig_local"

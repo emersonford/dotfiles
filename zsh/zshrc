@@ -13,4 +13,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(~/.dotfiles/bin/starship init zsh)"
+eval "$($HOME/.dotfiles/bin/starship init zsh)"
+
+# Allow local customizations 
+if [ -f $ZSH_CUSTOM/zshrc_local ]; then
+    source $ZSH_CUSTOM/zshrc_local
+fi
+

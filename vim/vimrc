@@ -161,6 +161,6 @@ map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 
 " Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
+if filereadable($HOME . "/.vim/vimrc_local")
+  source ~/.vim/vimrc_local
 endif

@@ -17,4 +17,4 @@ export PAGER='less'
 # Don't clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-export STARSHIP_CONFIG=~/.dotfiles/starship.toml
+export STARSHIP_CONFIG=$HOME/.dotfiles/starship.toml

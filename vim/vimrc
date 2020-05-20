@@ -95,6 +95,12 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
+" Avoid mistyping write/quit
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
 " Buffer shortcuts
 nmap gn :bn<cr>
 nmap gp :bp<cr>

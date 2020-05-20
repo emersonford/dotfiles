@@ -14,15 +14,3 @@
 [submodule "ohmyzsh"]
 	path = ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
-[submodule "vim/pack/plugins/start/ale"]
-	path = vim/pack/plugins/start/ale
-	url = https://github.com/w0rp/ale
-[submodule "vim/pack/plugins/start/vim-airline"]
-	path = vim/pack/plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "vim/pack/plugins/start/vim-tmux-navigator"]
-	path = vim/pack/plugins/start/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
-[submodule "vim/pack/plugins/start/vim-airline-themes"]
-	path = vim/pack/plugins/start/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes

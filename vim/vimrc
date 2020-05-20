@@ -45,8 +45,6 @@ endif
 
 " PLUGINS
 "
-filetype off
-execute pathogen#infect()
 filetype plugin indent on
 
 if has('statusline')
@@ -69,7 +67,10 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-" customize solarized dark
+" Enable ALE
+let g:airline#extensions#ale#enabled = 1
+
+" set color scheme to one half dark
 syntax on
 set t_Co=256
 colorscheme onehalfdark
@@ -104,10 +105,6 @@ nnoremap k gk
 let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <silent> <Leader>b :BufExplorer<CR>
 
-" set airline to solarized dark
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
-let g:airline#extensions#ale#enabled = 1
 
 " Keep all folds open when a file is opened
 augroup OpenAllFoldsOnFileOpen

@@ -3,7 +3,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
 if is-at-least 5.4; then
     typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
     typeset -gA ZSH_HIGHLIGHT_STYLES
-
+    #
     # main
     ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
     ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow'

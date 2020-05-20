@@ -15,7 +15,7 @@
 	path = ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 [submodule "vim/pack/colors/start/onehalf"]
-	path = vim/pack/colors/start/onehalf
+	path = vim/pack/colors/start
 	url = https://github.com/sonph/onehalf.git
 [submodule "vim/pack/plugins/start/vim-airline"]
 	path = vim/pack/plugins/start/vim-airline

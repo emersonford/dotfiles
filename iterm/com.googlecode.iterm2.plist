@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>ApplePressAndHoldEnabled</key>
@@ -428,7 +428,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 83 918 512 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1767 136 1537 1162 0 0 3440 1417 </string>
+	<string>1720 0 1719 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 560 585 467 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_F2590454-43D4-4D97-BCC4-7C760EFEE115</key>
@@ -1787,13 +1787,13 @@
 	<key>NoSyncInstallationId</key>
 	<string>5323DE8A-60B6-4FB4-A757-7262EBF24BA8</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>611642785.16352296</real>
+	<real>611817513.98313498</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncRecordedVariables</key>
@@ -2613,6 +2613,8 @@
 	</dict>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>568534124.21244705</real>
+	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
+	<real>611644713.98291397</real>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>1</integer>
 	<key>PointerActions</key>

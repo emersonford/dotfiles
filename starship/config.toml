@@ -1,0 +1,35 @@
+prompt_order = [
+    "username",
+    "hostname",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "hg_branch",
+    "line_break",
+    "character",
+]
+
+[username]
+show_always = true
+style_user = "bold blue"
+
+[hostname]
+ssh_only = false
+style = "bold green"
+
+[directory]
+truncation_length = 8
+style = "bold yellow"
+
+[git_branch]
+symbol = ""
+style = "bold purple"
+
+[git_commit]
+style = "bold cyan"
+
+[character]
+style_success = "bold white"
+style_failure = "bold red"

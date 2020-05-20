@@ -1,7 +1,6 @@
 " VIM Settings
 set noerrorbells
 set nocompatible
-set hidden
 
 " settings
 " turn hybrid line numbers on
@@ -14,12 +13,12 @@ set hidden
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-set shiftwidth=4    " two spaces per indent
+set shiftwidth=4    " four spaces per indent
 set tabstop=4       " number of spaces per tab in display
 set softtabstop=4   " number of spaces per tab when inserting
 set expandtab       " substitute spaces for tabs
 set autoindent      " carry indent over to new lines
-" set modelines=0
+set modelines=0
 
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing
@@ -31,7 +30,13 @@ set encoding=utf-8              " Set default encoding to UTF-8
 set autowrite                   " Automatically save before :next, :make etc.
 set autoread                    " Automatically reread changed files without asking me anything
 set ttyfast
+set hidden
 
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
+
+" Search settings
 if has("extra_search")
     " Highlight searches [use :noh to clear]
     set hlsearch
@@ -44,7 +49,6 @@ if has("extra_search")
 endif
 
 " PLUGINS
-"
 filetype plugin indent on
 
 if has('statusline')
@@ -105,6 +109,21 @@ nnoremap k gk
 let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <silent> <Leader>b :BufExplorer<CR>
 
+" Tab completion
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+set wildmode=list:longest,list:full
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<Tab>"
+    else
+        return "\<C-p>"
+    endif
+endfunction
+inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
+inoremap <S-Tab> <C-n>
+
 
 " Keep all folds open when a file is opened
 augroup OpenAllFoldsOnFileOpen
@@ -141,9 +160,7 @@ endif
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 
-" Deoplete settings
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#option('sources', {
-" \ '_': ['ale', 'ultisnips'],
-" \})
-" call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif

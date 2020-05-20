@@ -20,6 +20,6 @@
   - [test -d $HOME/.dotfiles || mv ../$(basename $PWD) $HOME/.dotfiles, Move folder to .dotfiles]
   - [git submodule update --init --recursive, Installing submodules]
   - [git clean -f, Cleanup any dangling files]
-  - [chsh -s $(which zsh), Set shell to zsh]
   - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin -y, Installing Starship prompt]
+  # - [chsh -s $(which zsh), Set shell to zsh]
   # - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin --platform unknown-linux-musl -y, Installing Starship prompt]

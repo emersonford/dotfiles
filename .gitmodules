@@ -26,3 +26,42 @@
 [submodule "vim/pack/plugins/start/vim-tmux-navigator"]
 	path = vim/pack/plugins/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "vim/pack/plugins/opt/ultisnips"]
+	path = vim/pack/plugins/opt/ultisnips
+	url = https://github.com/sirver/ultisnips
+[submodule "vim/pack/plugins/start/vim-surround"]
+	path = vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/pack/plugins/start/bufexplorer"]
+	path = vim/pack/plugins/start/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer
+[submodule "vim/pack/plugins/start/vim-polyglot"]
+	path = vim/pack/plugins/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "vim/pack/plugins/start/ctrlp.vim"]
+	path = vim/pack/plugins/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "vim/pack/plugins/start/vim-commentary"]
+	path = vim/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/pack/plugins/start/vimtex"]
+	path = vim/pack/plugins/start/vimtex
+	url = https://github.com/lervag/vimtex
+[submodule "vim/pack/plugins/start/tex-conceal.vim"]
+	path = vim/pack/plugins/start/tex-conceal.vim
+	url = https://github.com/KeitaNakamura/tex-conceal.vim.git
+[submodule "vim/pack/plugins/start/delimitmate"]
+	path = vim/pack/plugins/start/delimitmate
+	url = https://github.com/raimondi/delimitmate
+[submodule "vim/pack/plugins/start/tagbar"]
+	path = vim/pack/plugins/start/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "vim/pack/plugins/start/vim-repeat"]
+	path = vim/pack/plugins/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "vim/pack/plugins/start/vim-easymotion"]
+	path = vim/pack/plugins/start/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "vim/pack/plugins/start/vimux"]
+	path = vim/pack/plugins/start/vimux
+	url = https://github.com/benmills/vimux

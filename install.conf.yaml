@@ -12,6 +12,9 @@
     ~/.bash_profile: bash/bash_profile
     ~/.inputrc: input/inputrc
     ~/.zshrc: zsh/zshrc
+    ~/.gitattributes: git/gitattributes
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore
 
 - create:
     - ~/Downloads
@@ -20,6 +23,5 @@
   - [git submodule update --init --recursive, Installing submodules]
   - [git clean -f -d, Cleanup any dangling files]
   - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin -y, Installing Starship prompt]
-  - [test -d $HOME/.dotfiles || mv ../$(basename $PWD) $HOME/.dotfiles, Move folder to .dotfiles]
   # - [chsh -s $(which zsh), Set shell to zsh]
   # - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin --platform unknown-linux-musl -y, Installing Starship prompt]

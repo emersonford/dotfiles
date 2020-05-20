@@ -5,7 +5,6 @@
 - clean: ['~']
 
 - link:
-    # ~/.dotfiles: ''
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
@@ -18,5 +17,6 @@
     - ~/Downloads
 
 - shell:
+  - [mv ../$(basename $PWD) ../.dotfiles, Move folder to .dotfiles]
   - [git submodule update --init --recursive, Installing submodules]
   - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin -y, Installing Starship prompt]

@@ -1,6 +1,3 @@
-[submodule "vim/bundle/vim-better-whitespace"]
-	path = vim/bundle/vim-better-whitespace
-	url = https://github.com/ntpeters/vim-better-whitespace
 [submodule "vim/pack/colors/opt/onehalf"]
 	path = vim/pack/colors/opt/onehalf
 	url = https://github.com/sonph/onehalf.git
@@ -8,3 +5,12 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "zsh/plugins/zsh-autopair"]
+	path = zsh/plugins/zsh-autopair
+	url = https://github.com/hlissner/zsh-autopair
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/plugins/zsh-autosuggestions"]
+	path = zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

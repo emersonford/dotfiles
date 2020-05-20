@@ -19,4 +19,5 @@
 - shell:
   - [mv ../$(basename $PWD) ../.dotfiles, Move folder to .dotfiles]
   - [git submodule update --init --recursive, Installing submodules]
+  - [git clean -f, Cleanup any dangling files]
   - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin -y, Installing Starship prompt]

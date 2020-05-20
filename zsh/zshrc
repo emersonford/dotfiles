@@ -13,5 +13,4 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export STARSHIP_CONFIG=~/.dotfiles/starship.toml
 eval "$(~/.dotfiles/bin/starship init zsh)"

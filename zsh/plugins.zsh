@@ -1,7 +1,9 @@
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
 
+setopt sh_word_split
 typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 typeset -gA ZSH_HIGHLIGHT_STYLES
+unsetopt sh_word_split
 
 # main
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'

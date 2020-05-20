@@ -72,8 +72,14 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " customize solarized dark
 syntax on
 set t_Co=256
-set background=dark
-colorscheme solarized
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " Tagbar configurations
 map <F8> :TagbarToggle<CR>

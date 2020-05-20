@@ -5,15 +5,17 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
+    # ~/.dotfiles: ''
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
-    ~/.vimrc: vimrc
+    ~/.vimrc: vim/vimrc
+    ~/.bashrc: bash/bashrc
+    ~/.bash_profile: bash/bash_profile
+    ~/.zshrc: zsh/zshrc
 
 - create:
     - ~/Downloads
-    - ~/.vim/undo-history
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin, Installing Starship prompt]
+  - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin -y, Installing Starship prompt]

@@ -21,7 +21,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [git clean -f -d, Cleanup any dangling files]
+  - [git clean -f -d -f, Cleanup any dangling files]
   - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin -y, Installing Starship prompt]
   # - [chsh -s $(which zsh), Set shell to zsh]
   # - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin --platform unknown-linux-musl -y, Installing Starship prompt]

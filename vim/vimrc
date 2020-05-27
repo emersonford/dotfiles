@@ -23,6 +23,7 @@ set modelines=0
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode.
+set showmatch                   " Show me the matching delimiter
 
 set splitright                  " Split vertical windows right to the current windows
 set splitbelow                  " Split horizontal windows below to the current windows
@@ -49,7 +50,8 @@ if has("extra_search")
 endif
 
 " PLUGINS
-filetype plugin indent on
+filetype off
+filetype indent plugin on
 
 if has('statusline')
     " Always show status line

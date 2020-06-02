@@ -80,6 +80,7 @@ let g:airline#extensions#ale#enabled = 1
 syntax on
 set t_Co=256
 colorscheme onehalfdark
+hi IncSearch guifg=#282c34 ctermfg=236 guibg=#dcdfe4 ctermbg=188
 let g:airline_theme='onehalfdark'
 
 if exists('+termguicolors')

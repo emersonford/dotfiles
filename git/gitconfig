@@ -5,8 +5,8 @@
     co = checkout
     prev = checkout HEAD^
 
-    unstage = "!f() { git reset HEAD \"$1\"; }; f"
-    discard = "!f() { git checkout -- \"$1\"; }; f"
+    unstage = "reset HEAD --"
+    discard = "checkout --"
 
     # View the current working tree status using the short format
     s = status -s

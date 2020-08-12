@@ -68,3 +68,6 @@
 [submodule "vim/pack/plugins/start/vim-sensible"]
 	path = vim/pack/plugins/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule "vim/pack/plugins/start/vim-signify"]
+	path = vim/pack/plugins/start/vim-signify
+	url = https://github.com/mhinz/vim-signify.git

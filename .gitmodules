@@ -71,3 +71,6 @@
 [submodule "vim/pack/plugins/start/vim-signify"]
 	path = vim/pack/plugins/start/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
+[submodule "vim/pack/plugins/start/vim-fugitive"]
+	path = vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git

@@ -10,6 +10,7 @@
     unstage = "reset HEAD --"
     discard = "checkout --"
     last = "log -1 HEAD"
+    unstash = "stash pop"
 
     # View the current working tree status using the short format
     s = status -s

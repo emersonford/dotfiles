@@ -169,6 +169,9 @@ endif
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 
+" NERDTree Settings
+nmap <C-n> :NERDTreeToggle<CR>
+
 " Local config
 if filereadable($HOME . "/.vim/vimrc_local")
   source ~/.vim/vimrc_local

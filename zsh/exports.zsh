@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$HOME/bin:$PATH:/usr/bin:$HOME/.dotfiles/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/bin:$HOME/.dotfiles/bin
 typeset -U path
 
 export VISUAL=vim

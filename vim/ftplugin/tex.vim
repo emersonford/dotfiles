@@ -9,3 +9,6 @@ let g:tex_conceal='abdmg'
 let g:ale_fixers['tex'] = ["latexindent"] + g:ale_fixers['*']
 let g:ale_tex_latexindent_options = "-y=\"defaultIndent:' '\""
 let g:ale_linters['tex'] = ['texlab', 'chktex', 'lacheck']
+
+" Enable ultisnips plugin for Latex
+packadd ultisnips

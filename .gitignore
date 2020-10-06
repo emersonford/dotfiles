@@ -1,4 +1,5 @@
 .netrwhist
 bin/starship
 vim/sessions
+zsh/cache
 *local*

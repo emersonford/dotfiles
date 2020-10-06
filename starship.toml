@@ -1,19 +1,20 @@
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "hg_branch",
-    "line_break",
-    "character",
-]
+format = """\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$line_break\
+$character\
+"""
 
 [username]
 show_always = true
 style_user = "bold blue"
+format = "[$user]($style) on "
 
 [hostname]
 ssh_only = false
@@ -31,5 +32,5 @@ style = "bold purple"
 style = "bold cyan"
 
 [character]
-style_success = "bold white"
-style_failure = "bold red"
+success_symbol = "[❯](bold white)"
+error_symbol = "[❯](bold red)"

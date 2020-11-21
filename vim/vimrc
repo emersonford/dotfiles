@@ -133,6 +133,8 @@ endfunction
 inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
 inoremap <S-Tab> <C-n>
 
+" Disable vim-polyglot for Latex for vimtex
+let g:polyglot_disabled = ['latex']
 
 " Keep all folds open when a file is opened
 augroup OpenAllFoldsOnFileOpen

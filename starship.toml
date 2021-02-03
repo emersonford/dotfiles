@@ -14,15 +14,17 @@ $character\
 [username]
 show_always = true
 style_user = "bold blue"
-format = "[$user]($style) on "
+format = "[$user]($style)"
 
 [hostname]
-ssh_only = false
+ssh_only = true
 style = "bold green"
+format = " on [$hostname]($style)"
 
 [directory]
 truncation_length = 8
 style = "bold yellow"
+format = " in [$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
 symbol = ""

@@ -4,7 +4,9 @@ typeset -U path
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-export TERM='xterm-256color'
+if [[ "$TERM_PROGRAM" != 'iTerm.app' ]]; then
+    export TERM='xterm-256color'
+fi
 
 # LS Colors
 if ! ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -25,5 +27,3 @@ export PAGER='less'
 export MANPAGER="less -X"
 
 export STARSHIP_CONFIG=$HOME/.dotfiles/starship.toml
-
-

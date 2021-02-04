@@ -8,7 +8,7 @@ cd ~ || exit
 
 spack/bin/spack external find
 spack install tmux@3.1b
-spack install vim@8.2.1201
+spack install vim@8.2.1201 +huge +python
 spack install zsh@5.8
 spack install git@2.29.0
 

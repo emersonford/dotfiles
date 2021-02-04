@@ -4,7 +4,9 @@ typeset -U path
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-if [[ "$TERM_PROGRAM" != 'iTerm.app' ]]; then
+if [[ "$TERM_PROGRAM" == 'iTerm.app' || "$TERM" == 'iTerm2.app' ]] && infocmp iTerm2.app &> /dev/null; then
+    export TERM='iTerm2.app'
+else
     export TERM='xterm-256color'
 fi
 

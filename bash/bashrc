@@ -5,8 +5,14 @@
 # Do not do anything if it's a non interactive shell.
 [ -z "$PS1" ] && return
 
-if [ -x "$(which zsh)" ]; then
-    exec /bin/zsh -l
+if which zsh &> /dev/null && [ -x "$(which zsh)" ]; then
+    export SHELL=$(which zsh)
+
+    if [[ -o login ]]; then
+        exec "$SHELL" -l
+    else
+        exec "$SHELL"
+    fi
 else
     load_dotfiles() {
         declare -a files=(

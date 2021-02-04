@@ -18,4 +18,4 @@ if [ -f $ZSH_CUSTOM/zshrc_local ]; then
     source $ZSH_CUSTOM/zshrc_local
 fi
 
-eval "$($HOME/.dotfiles/bin/starship init zsh)"
+eval "$($HOME/bin/starship init zsh)"

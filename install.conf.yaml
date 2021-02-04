@@ -17,13 +17,14 @@
     ~/.gitignore: git/gitignore
 
 - create:
+    - ~/bin
     - ~/Downloads
 
 - shell:
   - [git pull, Pull latest dotfiles]
   - [git submodule update --init --recursive, Installing submodules]
-  - [git clean -f -d -f, Cleanup any dangling files]
-  - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin -y || curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.dotfiles/bin --platform unknown-linux-musl -y, Installing Starship prompt]
+  - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/bin -y || curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/bin --platform unknown-linux-musl -y, Installing Starship prompt]
   - [tic -xe iTerm2.app terminfo.src, Installing iTerm2.app terminfo]
   - [tic -xe tmux-256color terminfo.src, Installing tmux-256color terminfo]
+  - [git clean -f -d -f, Cleanup any dangling files]
   # - [chsh -s $(which zsh), Set shell to zsh]

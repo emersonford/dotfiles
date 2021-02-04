@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eux -o pipefail
 
 cd ~ || exit
 git clone https://github.com/spack/spack.git

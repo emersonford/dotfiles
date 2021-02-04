@@ -2,7 +2,7 @@
 set -eux -o pipefail
 
 cd ~ || exit
-git clone https://github.com/spack/spack.git
+stat spack &> /dev/null || git clone https://github.com/spack/spack.git
 cd spack && git fetch && git checkout releases/v0.16
 cd ~ || exit
 

@@ -5,14 +5,25 @@
 # Do not do anything if it's a non interactive shell.
 [ -z "$PS1" ] && return
 
-if which zsh &> /dev/null && [ -x "$(which zsh)" ]; then
-    export SHELL=$(which zsh)
+USE_ZSH=false
 
+# Prioritize local zsh installation.
+if [ -x "$HOME/bin/zsh" ]; then
+    USE_ZSH=true
+    export SHELL="$HOME/bin/zsh"
+# Else use the system installation.
+elif which zsh &> /dev/null && [ -x "$(which zsh)" ]; then
+    USE_ZSH=true
+    export SHELL="$(which zsh)"
+fi
+
+if $USE_ZSH; then
     if [[ -o login ]]; then
         exec "$SHELL" -l
     else
         exec "$SHELL"
     fi
+# If zsh is not present, resume using bash.
 else
     load_dotfiles() {
         declare -a files=(

@@ -6,7 +6,7 @@ export EDITOR=$VISUAL
 
 if [[ "$TERM_PROGRAM" == 'iTerm.app' || "$TERM" == 'iTerm2.app' ]] && infocmp iTerm2.app &> /dev/null; then
     export TERM='iTerm2.app'
-else
+elif [[ "$TERM" != 'tmux-256color' ]]; then
     export TERM='xterm-256color'
 fi
 

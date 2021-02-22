@@ -1,1 +1,1 @@
-let g:ale_fixers['terraform'] = ['terraform'] + g:ale_fixers['*']
+let b:ale_fixers = ['terraform'] + g:ale_fixers['*']

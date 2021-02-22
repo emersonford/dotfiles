@@ -1,1 +1,1 @@
-let g:ale_fixers['haskell'] = ['brittany'] + g:ale_fixers['*']
+let b:ale_fixers = ['brittany'] + g:ale_fixers['*']

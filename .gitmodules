@@ -47,9 +47,6 @@
 [submodule "vim/pack/plugins/start/vimtex"]
 	path = vim/pack/plugins/start/vimtex
 	url = https://github.com/lervag/vimtex
-[submodule "vim/pack/plugins/start/tex-conceal.vim"]
-	path = vim/pack/plugins/start/tex-conceal.vim
-	url = https://github.com/KeitaNakamura/tex-conceal.vim.git
 [submodule "vim/pack/plugins/start/delimitmate"]
 	path = vim/pack/plugins/start/delimitmate
 	url = https://github.com/raimondi/delimitmate

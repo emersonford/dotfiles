@@ -98,6 +98,12 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
+" I bind Ctrl+HJKL to arrow keys, so map arrow keys for Vim Tmux Navigator.
+nmap <Up> <C-k>
+nmap <Down> <C-j>
+nmap <Left> <C-h>
+nmap <Right> <C-l>
+
 " Avoid mistyping write/quit
 :command WQ wq
 :command Wq wq

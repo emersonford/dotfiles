@@ -4,8 +4,14 @@ typeset -U path
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-if [[ "$TERM" == 'iTerm2.app' ]] && ! infocmp iTerm2.app &> /dev/null; then
-    export TERM='xterm-256color'
+if ! infocmp iTerm2.app &> /dev/null; then
+    if [[ "$TERM" == 'iTerm2.app' ]]; then
+        export TERM='xterm-256color'
+    fi
+else
+    if [[ "$LC_TERMINAL" == 'iTerm2' && "$TERM" != 'iTerm2.app' ]]; then
+        export TERM='iTerm2.app'
+    fi
 fi
 
 # LS Colors

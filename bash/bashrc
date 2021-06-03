@@ -8,7 +8,7 @@
 USE_ZSH=false
 
 # Prioritize local zsh installation.
-if [ -x "$HOME/bin/zsh" ]; then
+if [ -x "$HOME/bin/zsh" ] && "$HOME/bin/zsh" -c true &> /dev/null; then
     USE_ZSH=true
     export SHELL="$HOME/bin/zsh"
 # Else use the system installation.

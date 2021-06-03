@@ -6,6 +6,9 @@ stat spack &> /dev/null || git clone https://github.com/spack/spack.git
 cd spack && git fetch && git checkout releases/v0.16
 cd ~ || exit
 
+spack/bin/spack mirror add E4S https://cache.e4s.io
+spack/bin/spack buildcache keys -it
+
 spack/bin/spack external find
 spack/bin/spack install tmux@3.1b
 spack/bin/spack install vim@8.2.1201 +huge +python

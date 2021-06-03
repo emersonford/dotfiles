@@ -17,7 +17,7 @@ elif which zsh &> /dev/null && [ -x "$(which zsh)" ]; then
     export SHELL="$(which zsh)"
 fi
 
-if $USE_ZSH; then
+if [ "$USE_ZSH" = true ]; then
     if [[ -o login ]]; then
         exec "$SHELL" -l
     else

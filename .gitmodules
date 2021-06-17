@@ -106,3 +106,30 @@
 	path = nvim/site/pack/plugins/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
 	shallow = true
+[submodule "nvim/site/pack/plugins/start/ctrlp.vim"]
+	path = nvim/site/pack/plugins/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "nvim/site/pack/plugins/start/vim-tmux-navigator"]
+	path = nvim/site/pack/plugins/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "nvim/site/pack/plugins/start/vim-easymotion"]
+	path = nvim/site/pack/plugins/start/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "nvim/site/pack/plugins/start/vim-fugitive"]
+	path = nvim/site/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "nvim/site/pack/plugins/start/tagbar"]
+	path = nvim/site/pack/plugins/start/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "nvim/site/pack/plugins/start/vimtex"]
+	path = nvim/site/pack/plugins/start/vimtex
+	url = https://github.com/lervag/vimtex
+[submodule "nvim/site/pack/plugins/start/delimitmate"]
+	path = nvim/site/pack/plugins/start/delimitmate
+	url = https://github.com/raimondi/delimitmate
+[submodule "nvim/site/pack/plugins/start/vimux"]
+	path = nvim/site/pack/plugins/start/vimux
+	url = https://github.com/benmills/vimux
+[submodule "nvim/site/pack/plugins/start/vim-signify"]
+	path = nvim/site/pack/plugins/start/vim-signify
+	url = https://github.com/mhinz/vim-signify.git

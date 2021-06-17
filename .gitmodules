@@ -74,3 +74,35 @@
 [submodule "vim/pack/plugins/start/nerdtree"]
 	path = vim/pack/plugins/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
+[submodule "onehalf"]
+	path = onehalf
+	url = https://github.com/sonph/onehalf
+	shallow = true
+[submodule "nvim/site/pack/plugins/start/vim-airline"]
+	path = nvim/site/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+	shallow = true
+[submodule "nvim/site/pack/plugins/start/vim-surround"]
+	path = nvim/site/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+	shallow = true
+[submodule "nvim/site/pack/plugins/start/vim-repeat"]
+	path = nvim/site/pack/plugins/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+	shallow = true
+[submodule "nvim/site/pack/plugins/start/nerdtree"]
+	path = nvim/site/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+	shallow = true
+[submodule "nvim/site/pack/plugins/start/bufexplorer"]
+	path = nvim/site/pack/plugins/start/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer
+	shallow = true
+[submodule "nvim/site/pack/plugins/start/vim-polyglot"]
+	path = nvim/site/pack/plugins/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+	shallow = true
+[submodule "nvim/site/pack/plugins/start/vim-commentary"]
+	path = nvim/site/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+	shallow = true

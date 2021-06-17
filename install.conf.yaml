@@ -21,10 +21,6 @@
     ~/.local/share/nvim/site:
       path: nvim/site
       create: true
-    nvim/site/pack/colorscheme/start/onehalf:
-      path: onehalf/vim
-      ignore-missing: true
-
 
 - create:
     - ~/bin

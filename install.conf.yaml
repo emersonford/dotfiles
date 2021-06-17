@@ -15,6 +15,16 @@
     ~/.gitattributes: git/gitattributes
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
+    ~/.config/nvim:
+      path: nvim/config
+      create: true
+    ~/.local/share/nvim/site:
+      path: nvim/site
+      create: true
+    nvim/site/pack/colorscheme/start/onehalf:
+      path: onehalf/vim
+      ignore-missing: true
+
 
 - create:
     - ~/bin

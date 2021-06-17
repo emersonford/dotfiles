@@ -32,4 +32,8 @@ export PAGER='less'
 # Don't clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
+# XDG environmental variables
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+
 export STARSHIP_CONFIG=$HOME/.dotfiles/starship.toml

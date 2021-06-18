@@ -23,8 +23,8 @@
 	path = onehalf
 	url = https://github.com/sonph/onehalf.git
 	shallow = true
-[submodule "vim/pack/lsp/start/ale"]
-	path = vim/pack/lsp/start/ale
+[submodule "vim/pack/plugins/start/ale"]
+	path = vim/pack/plugins/start/ale
 	url = https://github.com/w0rp/ale
 	shallow = true
 [submodule "vim/pack/plugins/start/vim-airline"]

@@ -19,10 +19,6 @@
 	path = ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 	shallow = true
-[submodule "onehalf"]
-	path = onehalf
-	url = https://github.com/sonph/onehalf.git
-	shallow = true
 [submodule "vim/pack/plugins/start/ale"]
 	path = vim/pack/plugins/start/ale
 	url = https://github.com/w0rp/ale
@@ -111,3 +107,6 @@
 	path = nvim/site/pack/plugins/start/nvim-compe
 	url = https://github.com/hrsh7th/nvim-compe.git
 	shallow = true
+[submodule "onedark"]
+	path = onedark
+	url = https://github.com/joshdick/onedark.vim.git

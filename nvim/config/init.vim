@@ -1,4 +1,4 @@
-"" line number settings ""
+"" line number settings
 set number relativenumber
 augroup numbertoggle
   autocmd!
@@ -7,26 +7,30 @@ augroup numbertoggle
 augroup END
 
 
-"" indent settings ""
+"" show settings
+set showmatch
+
+
+"" indent settings
 set shiftwidth=4    " four spaces per indent
 set tabstop=4       " number of spaces per tab in display
 set softtabstop=4   " number of spaces per tab when inserting
 set expandtab       " substitute spaces for tabs
 
 
-"" split settings ""
+"" split settings
 set splitright      " Split vertical windows right to the current windows
 set splitbelow      " Split horizontal windows below to the current windows
 set autowrite       " Automatically save before :next, :make etc.
 set hidden
 
 
-"" text width settings ""
+"" text width settings
 " set textwidth=80
 set colorcolumn=81
 
 
-"" keybind settings ""
+"" keybind settings
 " I bind Ctrl+HJKL to arrow keys, so map arrow keys for Vim Tmux Navigator.
 nmap <Up> <C-k>
 nmap <Down> <C-j>
@@ -46,9 +50,8 @@ nmap gb :b#<cr>
 nmap gq :bp <BAR> bd #<CR>
 
 
-"" status line settings ""
+"" status line settings
 set ruler
-
 " filename
 set statusline=%<%f\
 " options
@@ -59,7 +62,7 @@ set statusline+=\ [%{getcwd()}]
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 
-"" fold settings ""
+"" fold settings
 " keep all folds open when a file is opened
 augroup OpenAllFoldsOnFileOpen
     autocmd!
@@ -67,75 +70,62 @@ augroup OpenAllFoldsOnFileOpen
 augroup END
 
 
-"" tab completion settings ""
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-" set wildmode=list:longest,list:full
-" function! InsertTabWrapper()
-"     let col = col('.') - 1
-"     if !col || getline('.')[col - 1] !~ '\k'
-"         return "\<Tab>"
-"     else
-"         return "\<C-p>"
-"     endif
-" endfunction
-" inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
-" inoremap <S-Tab> <C-n>
+"" colorscheme settings
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 
-
-"" colorscheme settings ""
 syntax on
 set t_Co=256
-colorscheme onehalfdark
-hi IncSearch guifg=#282c34 ctermfg=236 guibg=#dcdfe4 ctermbg=188
-let g:airline_theme='onehalfdark'
-
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+packadd! onedark
+colorscheme onedark
+let g:airline_theme='onedark'
 
 
-"" tagbar settings ""
+"" tagbar settings
 map <F8> :TagbarToggle<CR>
 
 
-"" airline settings ""
+"" airline settings
 " enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 
-"" bufexplorer settings ""
+"" bufexplorer settings
 let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <silent> <Leader>b :BufExplorer<CR>
 
 
-"" vim-polyglot settings ""
+"" vim-polyglot settings
 let g:polyglot_disabled = ['latex']
 
 
-"" ultisnips settings ""
+"" vimtex settings
+let g:vimtex_compiler_progname = 'nvr'
+
+
+"" ultisnips settings
 " let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
 " let g:UltiSnipsExpandTrigger = '<tab>'
 " let g:UltiSnipsJumpForwardTrigger = '<tab>'
 " let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 
-"" nvim-treesitter settings ""
+"" nvim-treesitter settings
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "maintained",
   highlight = {
-    enable = true,              -- false will disable the whole extension
+    enable = true,
   },
 }
 EOF
 
 
-"" nvim-compe settings ""
+"" nvim-compe settings
+set completeopt=menuone,noselect
 lua << EOF
 -- Compe setup
 require'compe'.setup {
@@ -197,7 +187,59 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 EOF
 
-" Local config
+
+"" lspconfig settings
+lua << EOF
+local nvim_lsp = require('lspconfig')
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  --Enable completion triggered by <c-x><c-o>
+  -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { "pyls" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup { on_attach = on_attach }
+end
+EOF
+
+
+"" ale settings
+let g:ale_disable_lsp = 1
+let g:ale_linters_explicit = 1
+
+
+"" local config
 if filereadable($HOME . "/.config/nvim/local.vim")
   source ~/.config/nvim/local.vim
 endif

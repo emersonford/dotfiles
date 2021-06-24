@@ -31,7 +31,6 @@ else
             $HOME/.dotfiles/bash/bash_exports
             $HOME/.dotfiles/bash/bash_local
             $HOME/.dotfiles/bash/bash_paths
-            $HOME/.dotfiles/bash/bash_prompt
             $HOME/.dotfiles/bash/bash_options
         )
 

@@ -52,14 +52,6 @@ nmap gq :bp <BAR> bd #<CR>
 
 "" status line settings
 set ruler
-" filename
-set statusline=%<%f\
-" options
-set statusline+=%w%h%m%r
-" current dir
-set statusline+=\ [%{getcwd()}]
-" right aligned file nav info
-set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 
 "" fold settings
@@ -71,12 +63,16 @@ augroup END
 
 
 "" colorscheme settings
+" For tmux true color support
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
 
-syntax on
+set termguicolors
 set t_Co=256
+syntax on
+
+let g:onedark_terminal_italics = 1
+
 packadd! onedark
 colorscheme onedark
 let g:airline_theme='onedark'
@@ -91,6 +87,10 @@ map <F8> :TagbarToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 " show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+" disable fancy unicode symbols in airline
+let g:airline_symbols_ascii = 1
+" enable ALE support
+let g:airline#extensions#ale#enabled = 1
 
 
 "" bufexplorer settings
@@ -103,7 +103,7 @@ let g:polyglot_disabled = ['latex']
 
 
 "" vimtex settings
-let g:vimtex_compiler_progname = 'nvr'
+" let g:vimtex_compiler_progname = 'nvr'
 
 
 "" ultisnips settings

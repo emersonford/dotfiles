@@ -4,14 +4,14 @@ set nocompatible
 
 " settings
 " turn hybrid line numbers on
-:set number relativenumber
+set number relativenumber
 
 " relative numbers
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 set shiftwidth=4    " four spaces per indent
 set tabstop=4       " number of spaces per tab in display
@@ -53,22 +53,10 @@ endif
 filetype off
 filetype indent plugin on
 
-if has('statusline')
-    " Always show status line
-    set laststatus=2
-    " Broken down into easily includeable segments
-    " Filename
-    set statusline=%<%f\
-    " Options
-    set statusline+=%w%h%m%r
-    " Current dir
-    set statusline+=\ [%{getcwd()}]
-    " Right aligned file nav info
-    set statusline+=%=%-14.(%l,%c%V%)\ %p%%
-endif
-
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
+
+let g:airline_symbols_ascii = 1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -76,7 +64,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Enable ALE
 let g:airline#extensions#ale#enabled = 1
 
-" set color scheme to one half dark
+" set color scheme to one dark
 syntax on
 set t_Co=256
 if exists('+termguicolors')
@@ -85,9 +73,10 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+let g:onedark_terminal_italics = 1
+
 packadd! onedark
 colorscheme onedark
-let g:onedark_terminal_italics = 1
 let g:airline_theme='onedark'
 
 
@@ -107,10 +96,10 @@ nmap <Left> <C-h>
 nmap <Right> <C-l>
 
 " Avoid mistyping write/quit
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
+command WQ wq
+command Wq wq
+command W w
+command Q q
 
 " Buffer shortcuts
 nmap gn :bn<cr>

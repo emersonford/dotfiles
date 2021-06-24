@@ -3,8 +3,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
 if is-at-least 5.4; then
     typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
     typeset -gA ZSH_HIGHLIGHT_STYLES
-    #
-    # main
+
     ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
     ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow'
     ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan'
@@ -32,7 +31,7 @@ if is-at-least 5.4; then
     ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=blue'
     ZSH_HIGHLIGHT_STYLES[assign]='none,underline'
     ZSH_HIGHLIGHT_STYLES[redirection]='fg=cyan'
-    ZSH_HIGHLIGHT_STYLES[comment]='fg=black'
+    ZSH_HIGHLIGHT_STYLES[comment]='fg=240'
     ZSH_HIGHLIGHT_STYLES[arg0]='default'
 
     # brackets

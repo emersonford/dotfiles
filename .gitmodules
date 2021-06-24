@@ -3,6 +3,10 @@
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 	shallow = true
+[submodule "onedark"]
+	path = onedark
+	url = https://github.com/joshdick/onedark.vim.git
+	shallow = true
 [submodule "zsh/plugins/zsh-autopair"]
 	path = zsh/plugins/zsh-autopair
 	url = https://github.com/hlissner/zsh-autopair
@@ -107,6 +111,3 @@
 	path = nvim/site/pack/plugins/start/nvim-compe
 	url = https://github.com/hrsh7th/nvim-compe.git
 	shallow = true
-[submodule "onedark"]
-	path = onedark
-	url = https://github.com/joshdick/onedark.vim.git

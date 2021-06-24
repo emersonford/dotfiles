@@ -111,3 +111,7 @@
 	path = nvim/site/pack/plugins/start/nvim-compe
 	url = https://github.com/hrsh7th/nvim-compe.git
 	shallow = true
+[submodule "nvim/site/pack/colorscheme/opt/onedark"]
+	path = nvim/site/pack/colorscheme/opt/onedark
+	url = https://github.com/navarasu/onedark.nvim.git
+	shallow = true

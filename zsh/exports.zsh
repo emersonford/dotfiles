@@ -9,7 +9,7 @@ if ! infocmp iTerm2.app &> /dev/null; then
         export TERM='xterm-256color'
     fi
 else
-    if [[ "$LC_TERMINAL" == 'iTerm2' && "$TERM" != 'iTerm2.app' ]]; then
+    if [[ "$LC_TERMINAL" == 'iTerm2' && "$TERM" != 'iTerm2.app' && "$TERM" != 'tmux-256color' && "$TERM" != 'screen-256color' ]]; then
         export TERM='iTerm2.app'
     fi
 fi

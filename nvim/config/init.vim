@@ -55,6 +55,9 @@ set ruler
 
 
 "" fold settings
+" use treesitter for folds
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 " keep all folds open when a file is opened
 augroup OpenAllFoldsOnFileOpen
     autocmd!
@@ -75,11 +78,17 @@ let g:onedark_terminal_italics = 1
 
 packadd! onedark
 colorscheme onedark
+
+packadd! onedark-airline
 let g:airline_theme='onedark'
 
 
 "" tagbar settings
 map <F8> :TagbarToggle<CR>
+
+
+"" NERDTree Settings
+nmap <C-n> :NERDTreeToggle<CR>
 
 
 "" airline settings
@@ -104,6 +113,7 @@ let g:polyglot_disabled = ['latex']
 
 "" vimtex settings
 " let g:vimtex_compiler_progname = 'nvr'
+let g:tex_flavor = 'latex'
 
 
 "" ultisnips settings
@@ -237,6 +247,8 @@ EOF
 "" ale settings
 let g:ale_disable_lsp = 1
 let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
 
 
 "" local config

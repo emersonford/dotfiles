@@ -6,14 +6,15 @@ ZSH_CACHE_DIR=$ZSH_CUSTOM/cache
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(
+    colored-man-pages
     zsh-autopair
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-#
-# Allow local customizations 
+
+# Allow local customizations
 if [ -f $ZSH_CUSTOM/zshrc_local ]; then
     source $ZSH_CUSTOM/zshrc_local
 fi

@@ -31,10 +31,6 @@
 	path = vim/pack/plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
 	shallow = true
-[submodule "vim/pack/plugins/start/vim-tmux-navigator"]
-	path = vim/pack/plugins/start/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
-	shallow = true
 [submodule "vim/pack/plugins/opt/ultisnips"]
 	path = vim/pack/plugins/opt/ultisnips
 	url = https://github.com/sirver/ultisnips

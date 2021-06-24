@@ -31,11 +31,11 @@ set colorcolumn=81
 
 
 "" keybind settings
-" I bind Ctrl+HJKL to arrow keys, so map arrow keys for Vim Tmux Navigator.
-nmap <Up> <C-k>
-nmap <Down> <C-j>
-nmap <Left> <C-h>
-nmap <Right> <C-l>
+" I bind Ctrl+HJKL to arrow keys, so map arrow keys to pane shifts.
+nmap <Up> <C-w><C-k>
+nmap <Down> <C-w><C-j>
+nmap <Left> <C-w><C-h>
+nmap <Right> <C-w><C-l>
 
 " avoid mistyping write/quit
 command WQ wq
@@ -82,6 +82,12 @@ colorscheme onedark
 packadd! onedark-airline
 let g:airline_theme='onedark'
 
+" Set vim-signify colors manually
+let s:colors = onedark#GetColors()
+execute "highlight" "SignifySignAdd" "gui=NONE guifg=" . s:colors.green.gui . " guibg=NONE"
+execute "highlight" "SignifySignChange" "gui=NONE guifg=" . s:colors.yellow.gui  . " guibg=NONE"
+execute "highlight" "SignifySignDelete" "gui=NONE guifg=" . s:colors.red.gui . " guibg=NONE"
+
 
 "" tagbar settings
 map <F8> :TagbarToggle<CR>
@@ -105,10 +111,6 @@ let g:airline#extensions#ale#enabled = 1
 "" bufexplorer settings
 let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <silent> <Leader>b :BufExplorer<CR>
-
-
-"" vim-polyglot settings
-let g:polyglot_disabled = ['latex']
 
 
 "" vimtex settings
@@ -237,7 +239,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyls" }
+local servers = { "pyls", "texlab" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end

@@ -156,6 +156,9 @@
     name = "Emerson Ford"
     email = "emersontford@gmail.com"
 
+[init]
+    defaultBranch = main
+
 # Allow local customizations in the .gitconfig_local file
 [include]
 	path = "$HOME/.dotfiles/git/gitconfig_local"

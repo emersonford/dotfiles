@@ -1,5 +1,5 @@
 let g:vimtex_view_method='skim'
-let g:vimtex_view_automatic=1
+let g:vimtex_view_automatic=0
 let g:vimtex_quickfix_mode=0
 " Let texlab handle completion.
 let g:vimtex_complete_enabled=0

@@ -3,10 +3,6 @@
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 	shallow = true
-[submodule "onedark"]
-	path = onedark
-	url = https://github.com/joshdick/onedark.vim.git
-	shallow = true
 [submodule "zsh/plugins/zsh-autopair"]
 	path = zsh/plugins/zsh-autopair
 	url = https://github.com/hlissner/zsh-autopair
@@ -114,6 +110,12 @@
 [submodule "nvim/site/pack/plugins/start/nvim-treesitter-textobjects"]
 	path = nvim/site/pack/plugins/start/nvim-treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
+	shallow = true
 [submodule "nvim/site/pack/plugins/start/playground"]
 	path = nvim/site/pack/plugins/start/playground
 	url = https://github.com/nvim-treesitter/playground.git
+	shallow = true
+[submodule "onedark"]
+	path = onedark
+	url = https://github.com/joshdick/onedark.vim
+	shallow = true

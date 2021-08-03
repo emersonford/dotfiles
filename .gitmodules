@@ -111,3 +111,9 @@
 	path = nvim/site/pack/colorscheme/opt/onedark
 	url = https://github.com/navarasu/onedark.nvim.git
 	shallow = true
+[submodule "nvim/site/pack/plugins/start/nvim-treesitter-textobjects"]
+	path = nvim/site/pack/plugins/start/nvim-treesitter-textobjects
+	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
+[submodule "nvim/site/pack/plugins/start/playground"]
+	path = nvim/site/pack/plugins/start/playground
+	url = https://github.com/nvim-treesitter/playground.git

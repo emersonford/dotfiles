@@ -99,10 +99,6 @@
 	path = nvim/site/pack/plugins/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
 	shallow = true
-[submodule "nvim/site/pack/plugins/start/nvim-compe"]
-	path = nvim/site/pack/plugins/start/nvim-compe
-	url = https://github.com/hrsh7th/nvim-compe.git
-	shallow = true
 [submodule "nvim/site/pack/colorscheme/opt/onedark"]
 	path = nvim/site/pack/colorscheme/opt/onedark
 	url = https://github.com/navarasu/onedark.nvim.git

@@ -118,6 +118,8 @@
 [submodule "nvim/site/pack/plugins/start/nvim-cmp"]
 	path = nvim/site/pack/plugins/start/nvim-cmp
 	url = https://github.com/hrsh7th/nvim-cmp.git
+	shallow = true
 [submodule "nvim/site/pack/plugins/start/cmp-nvim-lsp"]
 	path = nvim/site/pack/plugins/start/cmp-nvim-lsp
 	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
+	shallow = true

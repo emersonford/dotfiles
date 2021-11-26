@@ -91,35 +91,7 @@
 	path = vim/pack/shared-plugins/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
 	shallow = true
-[submodule "nvim/site/pack/plugins/start/nvim-treesitter"]
-	path = nvim/site/pack/plugins/start/nvim-treesitter
-	url = https://github.com/nvim-treesitter/nvim-treesitter.git
-	shallow = true
-[submodule "nvim/site/pack/plugins/start/nvim-lspconfig"]
-	path = nvim/site/pack/plugins/start/nvim-lspconfig
-	url = https://github.com/neovim/nvim-lspconfig.git
-	shallow = true
-[submodule "nvim/site/pack/colorscheme/opt/onedark"]
-	path = nvim/site/pack/colorscheme/opt/onedark
-	url = https://github.com/navarasu/onedark.nvim.git
-	shallow = true
-[submodule "nvim/site/pack/plugins/start/nvim-treesitter-textobjects"]
-	path = nvim/site/pack/plugins/start/nvim-treesitter-textobjects
-	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
-	shallow = true
-[submodule "nvim/site/pack/plugins/start/playground"]
-	path = nvim/site/pack/plugins/start/playground
-	url = https://github.com/nvim-treesitter/playground.git
-	shallow = true
 [submodule "onedark"]
 	path = onedark
 	url = https://github.com/joshdick/onedark.vim
-	shallow = true
-[submodule "nvim/site/pack/plugins/start/nvim-cmp"]
-	path = nvim/site/pack/plugins/start/nvim-cmp
-	url = https://github.com/hrsh7th/nvim-cmp.git
-	shallow = true
-[submodule "nvim/site/pack/plugins/start/cmp-nvim-lsp"]
-	path = nvim/site/pack/plugins/start/cmp-nvim-lsp
-	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
 	shallow = true

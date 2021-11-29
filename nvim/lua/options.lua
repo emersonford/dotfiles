@@ -38,4 +38,4 @@ opt.inccommand = 'nosplit'  -- show effects of substitute incrementally
 
 opt.mouse = 'a'             -- enable mouse mode
 
-opt.updatetime = 250        -- decrease time for cursorhold event
+opt.updatetime = 400        -- decrease time for cursorhold event

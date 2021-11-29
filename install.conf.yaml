@@ -16,7 +16,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.config/nvim:
-      path: nvim/config
+      path: nvim
       create: true
 
 - create:

@@ -18,9 +18,6 @@
     ~/.config/nvim:
       path: nvim/config
       create: true
-    ~/.local/share/nvim/site:
-      path: nvim/site
-      create: true
 
 - create:
     - ~/bin

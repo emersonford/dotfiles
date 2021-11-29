@@ -1,4 +1,5 @@
 .netrwhist
 vim/sessions
 zsh/cache
+nvim/plugin/packer_compiled.lua
 *local*

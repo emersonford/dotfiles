@@ -3,7 +3,7 @@ local opt = vim.opt
 opt.number = true           -- show line numbers
 opt.relativenumber = true   -- show relative numbers by default
 
--- show absolute numbers in insert mode, relative in normal mode 
+-- show absolute numbers in insert mode, relative in normal mode
 vim.cmd([[
   augroup numbertoggle
     autocmd!
@@ -37,3 +37,5 @@ opt.termguicolors = true    -- allow true colors
 opt.inccommand = 'nosplit'  -- show effects of substitute incrementally
 
 opt.mouse = 'a'             -- enable mouse mode
+
+opt.updatetime = 250        -- decrease time for cursorhold event

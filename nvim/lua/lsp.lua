@@ -1,8 +1,12 @@
+M = {}
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+M.capabilities = capabilities
 
 -- lspconfig settings
 local nvim_lsp = require('lspconfig')
+M.nvim_lsp = nvim_lsp
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -34,8 +38,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-
 end
+M.on_attach = on_attach
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -55,3 +59,5 @@ null_ls.config({
 nvim_lsp['null-ls'].setup({
   on_attach = on_attach
 })
+
+return M

@@ -38,6 +38,22 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+
+  vim.diagnostic.config({
+    virtual_text = {
+      source = "always",
+      format = function(diagnostic) 
+        local new_line_location = diagnostic.message:find("\n")
+        
+        if new_line_location ~= nil then
+          return diagnostic.message:sub(1, new_line_location)
+        else
+          return diagnostic.message
+        end
+      end
+    }
+  })
 end
 M.on_attach = on_attach
 

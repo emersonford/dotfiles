@@ -112,7 +112,12 @@ return require('packer').startup(function(use)
     'jose-elias-alvarez/null-ls.nvim', 
     requires = { 'nvim-lua/plenary.nvim' }
   }
-  use 'liuchengxu/vista.vim' 
+  use {
+    'liuchengxu/vista.vim',
+    config = function()
+      vim.g.vista_default_executive = 'nvim_lsp'
+    end
+  } 
   use { 
     'kosayoda/nvim-lightbulb', 
     config = function() 

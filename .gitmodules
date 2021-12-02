@@ -19,17 +19,9 @@
 	path = ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 	shallow = true
-[submodule "vim/pack/plugins/start/ale"]
-	path = vim/pack/shared-plugins/start/ale
-	url = https://github.com/w0rp/ale
-	shallow = true
 [submodule "vim/pack/plugins/start/vim-airline"]
 	path = vim/pack/shared-plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-	shallow = true
-[submodule "vim/pack/plugins/opt/ultisnips"]
-	path = vim/pack/shared-plugins/opt/ultisnips
-	url = https://github.com/sirver/ultisnips
 	shallow = true
 [submodule "vim/pack/plugins/start/vim-surround"]
 	path = vim/pack/shared-plugins/start/vim-surround
@@ -39,57 +31,21 @@
 	path = vim/pack/shared-plugins/start/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer
 	shallow = true
-[submodule "vim/pack/plugins/start/vim-polyglot"]
-	path = vim/pack/plugins/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
-	shallow = true
-[submodule "vim/pack/plugins/start/ctrlp.vim"]
-	path = vim/pack/shared-plugins/start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
-	shallow = true
 [submodule "vim/pack/plugins/start/vim-commentary"]
 	path = vim/pack/shared-plugins/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-	shallow = true
-[submodule "vim/pack/plugins/start/vimtex"]
-	path = vim/pack/shared-plugins/start/vimtex
-	url = https://github.com/lervag/vimtex
 	shallow = true
 [submodule "vim/pack/plugins/start/delimitmate"]
 	path = vim/pack/shared-plugins/start/delimitmate
 	url = https://github.com/raimondi/delimitmate
 	shallow = true
-[submodule "vim/pack/plugins/start/tagbar"]
-	path = vim/pack/plugins/start/tagbar
-	url = https://github.com/majutsushi/tagbar
-	shallow = true
 [submodule "vim/pack/plugins/start/vim-repeat"]
 	path = vim/pack/shared-plugins/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat
 	shallow = true
-[submodule "vim/pack/plugins/start/vim-easymotion"]
-	path = vim/pack/shared-plugins/start/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion
-	shallow = true
-[submodule "vim/pack/plugins/start/vimux"]
-	path = vim/pack/shared-plugins/start/vimux
-	url = https://github.com/benmills/vimux
-	shallow = true
 [submodule "vim/pack/plugins/start/vim-sensible"]
 	path = vim/pack/plugins/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
-	shallow = true
-[submodule "vim/pack/plugins/start/vim-signify"]
-	path = vim/pack/shared-plugins/start/vim-signify
-	url = https://github.com/mhinz/vim-signify.git
-	shallow = true
-[submodule "vim/pack/plugins/start/vim-fugitive"]
-	path = vim/pack/shared-plugins/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-	shallow = true
-[submodule "vim/pack/plugins/start/nerdtree"]
-	path = vim/pack/shared-plugins/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
 	shallow = true
 [submodule "onedark"]
 	path = onedark

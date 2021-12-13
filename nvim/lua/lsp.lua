@@ -66,14 +66,12 @@ M.on_attach = on_attach
 
 -- null-ls configs
 local null_ls = require('null-ls')
-null_ls.config({
+null_ls.setup({
+  on_attach = on_attach,
   sources = {
     null_ls.builtins.formatting.trim_whitespace,
     null_ls.builtins.formatting.trim_newlines,
   }
-})
-nvim_lsp['null-ls'].setup({
-  on_attach = on_attach
 })
 
 return M

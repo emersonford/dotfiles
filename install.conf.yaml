@@ -21,6 +21,9 @@
     ~/.config/karabiner:
       path: karabiner
       create: true
+    ~/.config/fish:
+      path: fish
+      create: true
 
 - create:
     - ~/bin

@@ -18,6 +18,9 @@
     ~/.config/nvim:
       path: nvim
       create: true
+    ~/.config/karabiner:
+      path: karabiner
+      create: true
 
 - create:
     - ~/bin

@@ -108,11 +108,11 @@ return require('packer').startup(function(use)
         ensure_installed = "maintained",
         highlight = {
           enable = true,
-          disable = {"tex"}
+          disable = {"latex"}
         },
         indent = {
           enable = true,
-          disable = {"python", "lua", "tex"}
+          disable = {"python", "lua", "latex"}
         },
       }
     end

@@ -108,10 +108,11 @@ return require('packer').startup(function(use)
         ensure_installed = "maintained",
         highlight = {
           enable = true,
+          disable = {"tex"}
         },
         indent = {
           enable = true,
-          disable = {"python", "lua"}
+          disable = {"python", "lua", "tex"}
         },
       }
     end
@@ -325,6 +326,18 @@ return require('packer').startup(function(use)
         char_highlight = 'LineNr',
         show_trailing_blankline_indent = false
       }
+    end
+  }
+  
+  use {
+    'lervag/vimtex',
+    config = function()
+      vim.o.conceallevel = 2
+      vim.g.vimtex_complete_enabled = 0
+      vim.g.vimtex_format_enabled = 0
+      vim.g.vimtex_compiler_enabled = 0
+      vim.g.vimtex_quickfix_enabled = 0
+      vim.g.vimtex_view_enabled = 0
     end
   }
 

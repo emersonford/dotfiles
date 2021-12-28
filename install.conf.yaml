@@ -28,6 +28,7 @@
 - create:
     - ~/bin
     - ~/Downloads
+    - nvim/lua/local.lua
 
 - shell:
   - [git pull, Pull latest dotfiles]

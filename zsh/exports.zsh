@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.dotfiles/bin
 typeset -U path
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 if ! infocmp iTerm2.app &> /dev/null; then

@@ -20,22 +20,19 @@ return require('packer').startup(function(use)
 
   -- Colorscheme
   use {
-    'joshdick/onedark.vim',
+    'folke/tokyonight.nvim',
     config = function()
-      vim.g.onedark_terminal_italics = 1
-      vim.cmd 'colorscheme onedark'
-
-      vim.cmd 'highlight! link TSKeywordFunction Statement'
-      vim.cmd 'highlight! link TSKeyword Statement'
-      vim.cmd 'highlight! link TSVariableBuiltin Constant'
+      vim.cmd 'colorscheme tokyonight'
     end
   }
 
   use {
     'akinsho/bufferline.nvim', 
     requires = {'kyazdani42/nvim-web-devicons'},
-    after = 'onedark.vim',
+    after = "tokyonight.nvim",
     config = function()
+      local colors = require("tokyonight.colors").setup{}
+
       require('bufferline').setup{
         options = {
           separator_style = "slant",
@@ -50,24 +47,17 @@ return require('packer').startup(function(use)
         },
         highlights = {
           fill = {
-            guibg = vim.fn['onedark#GetColors']()['background']['gui']
+            guibg = colors.bg_statusline
           },
           separator = {
-            guifg = vim.fn['onedark#GetColors']()['background']['gui']
+            guifg = colors.bg_statusline
           },
           separator_selected = {
-            guifg = vim.fn['onedark#GetColors']()['background']['gui'],
-            guibg = vim.fn['onedark#GetColors']()['cursor_grey']['gui']
+            guifg = colors.bg_statusline
           },
           separator_visible = {
-            guifg = vim.fn['onedark#GetColors']()['background']['gui']
+            guifg = colors.bg_statusline
           },
-          buffer_selected = {
-            guibg = vim.fn['onedark#GetColors']()['cursor_grey']['gui']
-          },
-          close_button_selected = {
-            guibg = vim.fn['onedark#GetColors']()['cursor_grey']['gui']
-          }
         }
       }
 
@@ -86,7 +76,7 @@ return require('packer').startup(function(use)
     config = function()
       require('lualine').setup{
         options = {
-          theme = "onedark"
+          theme = "tokyonight"
         },
         sections = {
           lualine_c = {
@@ -314,7 +304,24 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
 
-  use 'mhinz/vim-signify'
+  use {
+    'mhinz/vim-signify',
+    after = "tokyonight.nvim",
+    config = function()
+      local colors = require("tokyonight.colors").setup{}
+      local util = require("tokyonight.util")
+
+      util.highlight("SignifySignAdd", {link = "GitSignsAdd"})
+      util.highlight("SignifySignChange", {link = "GitSignsChange"})
+      util.highlight("SignifySignChangeDelete", {link = "GitSignsChange"})
+      util.highlight("SignifySignDelete", {link = "GitSignsDelete"})
+      util.highlight("SignifySignDeleteFirstLine", {link = "GitSignsDelete"})
+
+      vim.g.signify_sign_add = "▊"
+      vim.g.signify_sign_change = "▊"
+      vim.g.signify_sign_change_delete = "~"
+    end
+  }
 
   use { 
     'lukas-reineke/indent-blankline.nvim',

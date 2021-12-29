@@ -104,7 +104,7 @@
     # Make `git rebase` safer on OS X
     # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
     trustctime = false
-    editor = vim
+    editor = nvim
     pager = cat
 
 [color]
@@ -136,6 +136,15 @@
 
     # Detect copies as well as renames
     renames = copies
+    tool = nvimdiff
+
+[difftool]
+
+    prompt = true
+
+[difftool "nvimdiff"]
+
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [help]
 
@@ -146,11 +155,16 @@
 
     # Include summaries of merged commits in newly created merge commit messages
     log = true
-    tool = vimdiff
+    tool = nvimdiff
     conflictstyle = diff3
 
 [mergetool]
+
     prompt = false
+
+[mergetool "nvimdiff"]
+
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [user]
     name = "Emerson Ford"

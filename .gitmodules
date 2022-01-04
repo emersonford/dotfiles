@@ -47,7 +47,3 @@
 	path = vim/pack/plugins/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
 	shallow = true
-[submodule "onedark"]
-	path = onedark
-	url = https://github.com/joshdick/onedark.vim
-	shallow = true

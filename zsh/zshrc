@@ -3,6 +3,10 @@ export ZSH=$HOME/.dotfiles/ohmyzsh
 ZSH_CUSTOM=$HOME/.dotfiles/zsh
 ZSH_CACHE_DIR=$ZSH_CUSTOM/cache
 
+if [ -f $ZSH_CUSTOM/zshrc_before_local ]; then
+    source $ZSH_CUSTOM/zshrc_before_local
+fi
+
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(

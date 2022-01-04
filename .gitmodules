@@ -47,3 +47,7 @@
 	path = vim/pack/plugins/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
 	shallow = true
+[submodule "zsh/plugins/zsh-completions"]
+	path = zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
+  shallow = true

@@ -3,11 +3,11 @@ source ~/.config/fish/tokyonight.fish
 
 # Fix terminfo if iTerm2.app is not available.
 if ! infocmp iTerm2.app &> /dev/null
-  if [ $TERM = 'iTerm2.app' ]
+  if [ "$TERM" = 'iTerm2.app' ]
     set -gx TERM 'xterm-256color'
   end
 else
-  if [ $LC_TERMINAL = 'iTerm2' -a $TERM != 'iTerm2.app' -a $TERM != 'tmux-256color' -a $TERM != 'screen-256color' ]
+  if set -q LC_TERMINAL && [ "$LC_TERMINAL" = 'iTerm2' -a "$TERM" != 'iTerm2.app' -a "$TERM" != 'tmux-256color' -a "$TERM" != 'screen-256color' ]
     set -gx TERM 'iTerm2.app'
   end
 end

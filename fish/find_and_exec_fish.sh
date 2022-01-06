@@ -18,8 +18,8 @@ find_and_exec_fish() {
     fi
   done
 
-  if [ "$fish_found" = false ] && which fish &> /dev/null && [ -x "$(which zsh)" ]; then
-    export SHELL="$(which zsh)"
+  if [ "$fish_found" = false ] && which fish &> /dev/null && [ -x "$(which fish)" ]; then
+    export SHELL="$(which fish)"
     fish_found=true
   fi
 

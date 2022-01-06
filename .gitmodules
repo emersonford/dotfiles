@@ -3,22 +3,6 @@
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 	shallow = true
-[submodule "zsh/plugins/zsh-autopair"]
-	path = zsh/plugins/zsh-autopair
-	url = https://github.com/hlissner/zsh-autopair
-	shallow = true
-[submodule "zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-	shallow = true
-[submodule "zsh/plugins/zsh-autosuggestions"]
-	path = zsh/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
-	shallow = true
-[submodule "ohmyzsh"]
-	path = ohmyzsh
-	url = https://github.com/ohmyzsh/ohmyzsh.git
-	shallow = true
 [submodule "vim/pack/plugins/start/vim-airline"]
 	path = vim/pack/shared-plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
@@ -47,7 +31,3 @@
 	path = vim/pack/plugins/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
 	shallow = true
-[submodule "zsh/plugins/zsh-completions"]
-	path = zsh/plugins/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions
-  shallow = true

@@ -8,10 +8,8 @@
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
-    ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
-    ~/.inputrc: input/inputrc
-    ~/.zshrc: zsh/zshrc
+    ~/.zprofile: zsh/zprofile
     ~/.gitattributes: git/gitattributes
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
@@ -23,6 +21,9 @@
       create: true
     ~/.config/fish:
       path: fish
+      create: true
+    ~/.config/starship.toml:
+      path: starship.toml
       create: true
 
 - create:

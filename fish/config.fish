@@ -1,35 +1,65 @@
-# TokyoNight Color Palette
-set -l foreground c0caf5
-set -l selection 364A82
-set -l comment 565f89
-set -l red f7768e
-set -l orange ff9e64
-set -l yellow e0af68
-set -l green 9ece6a
-set -l purple 9d7cd8
-set -l cyan 7dcfff
-set -l pink bb9af7
+# Colorscheme
+source ~/.config/fish/tokyonight.fish
 
-# Syntax Highlighting Colors
-set -g fish_color_normal $foreground
-set -g fish_color_command $cyan
-set -g fish_color_keyword $pink
-set -g fish_color_quote $yellow
-set -g fish_color_redirection $foreground
-set -g fish_color_end $orange
-set -g fish_color_error $red
-set -g fish_color_param $purple
-set -g fish_color_comment $comment
-set -g fish_color_selection --background=$selection
-set -g fish_color_search_match --background=$selection
-set -g fish_color_operator $green
-set -g fish_color_escape $pink
-set -g fish_color_autosuggestion $comment
+# Fix terminfo if iTerm2.app is not available.
+if ! infocmp iTerm2.app &> /dev/null
+  if [ $TERM = 'iTerm2.app' ]
+    set -gx TERM 'xterm-256color'
+  end
+else
+  if [ $LC_TERMINAL = 'iTerm2' -a $TERM != 'iTerm2.app' -a $TERM != 'tmux-256color' -a $TERM != 'screen-256color' ]
+    set -gx TERM 'iTerm2.app'
+  end
+end
 
-# Completion Pager Colors
-set -g fish_pager_color_progress $comment
-set -g fish_pager_color_prefix $cyan
-set -g fish_pager_color_completion $foreground
-set -g fish_pager_color_description $comment
+# Exports
+set -gx EDITOR (which nvim)
+set -gx VISUAL $EDITOR
+set -gx SUDO_EDITOR $EDITOR
 
+set -gx PAGER (which less)
+set -gx MANPAGER (which less) -X
+
+set -gx LANG 'en_US.UTF-8'
+set -gx LC_ALL $LANG
+set -gx LANGUAGE $LANG
+
+set -gx XDG_CONFIG_HOME ~/.config
+set -gx XDG_DATA_HOME ~/.local/share
+
+set -U fish_greeting
+
+if ! ls --color &> /dev/null # GNU `ls`
+  set -gx LSCOLORS 'exfxcxdxbxegedabagacad'
+  set -g colorflag '--color'
+else
+  set -gx LS_COLORS 'di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+  set -g colorflag '-G'
+end
+
+# Aliases
+function ssh
+  set -l TERM "xterm-256color"
+  command ssh $argv
+end
+
+function sudo
+  set -l TERM "xterm-256color"
+  command sudo $argv
+end
+
+alias grep="grep --color=auto"
+alias ls="ls $colorflag"
+alias la="ls -lahF $colorflag"
+
+# Paths
+set -Ux fish_user_paths
+fish_add_path ~/bin
+fish_add_path ~/.dotfiles/bin
+fish_add_path /usr/local/bin
+
+# Local config
+[ -f ~/.config/fish/local.fish ] && source ~/.config/fish/local.fish
+
+# Use starship prompt
 starship init fish | source

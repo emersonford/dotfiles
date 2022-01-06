@@ -3,3 +3,4 @@ vim/sessions
 zsh/cache
 nvim/plugin/packer_compiled.lua
 *local*
+fish/fish_variables

@@ -29,12 +29,12 @@ set -gx XDG_DATA_HOME ~/.local/share
 
 set -U fish_greeting
 
-if ! ls --color &> /dev/null # GNU `ls`
-  set -gx LSCOLORS 'exfxcxdxbxegedabagacad'
-  set -g colorflag '--color'
-else
+if ls --color &> /dev/null # GNU `ls`
   set -gx LS_COLORS 'di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
-  set -g colorflag '-G'
+  set -g lscolorflag '--color'
+else
+  set -gx LSCOLORS 'exfxcxdxbxegedabagacad'
+  set -g lscolorflag '-G'
 end
 
 # Aliases
@@ -42,8 +42,8 @@ alias ssh="TERM=xterm-256color command ssh"
 alias sudo="TERM=xterm-256color command sudo"
 
 alias grep="grep --color=auto"
-alias ls="ls $colorflag"
-alias la="ls -lahF $colorflag"
+alias ls="ls $lscolorflag"
+alias la="ls -lahF $lscolorflag"
 
 # Paths
 set -Ux fish_user_paths

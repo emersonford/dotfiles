@@ -38,15 +38,8 @@ else
 end
 
 # Aliases
-function ssh
-  set -l TERM "xterm-256color"
-  command ssh $argv
-end
-
-function sudo
-  set -l TERM "xterm-256color"
-  command sudo $argv
-end
+alias ssh="TERM=xterm-256color command ssh"
+alias sudo="TERM=xterm-256color command sudo"
 
 alias grep="grep --color=auto"
 alias ls="ls $colorflag"

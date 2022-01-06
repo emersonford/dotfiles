@@ -53,17 +53,6 @@ endif
 filetype off
 filetype indent plugin on
 
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-
-let g:airline_symbols_ascii = 1
-
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-" Enable ALE
-let g:airline#extensions#ale#enabled = 1
-
 " set color scheme to one dark
 syntax on
 set t_Co=256
@@ -72,16 +61,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-
-let g:onedark_terminal_italics = 1
-
-packadd! onedark
-colorscheme onedark
-let g:airline_theme='onedark'
-
-
-" Tagbar configurations
-map <F8> :TagbarToggle<CR>
 
 " Disable arrow keys
 noremap <Up> <nop>
@@ -110,69 +89,6 @@ nmap gq :bp <BAR> bd #<CR>
 " Move to next displayed line instead of actual line
 nnoremap j gj
 nnoremap k gk
-
-" Bufexplorer Maps
-let g:bufExplorerDisableDefaultKeyMapping=1
-nnoremap <silent> <Leader>b :BufExplorer<CR>
-
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<Tab>"
-    else
-        return "\<C-p>"
-    endif
-endfunction
-inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
-inoremap <S-Tab> <C-n>
-
-" Disable vim-polyglot for Latex for vimtex
-let g:polyglot_disabled = ['latex']
-
-" Keep all folds open when a file is opened
-augroup OpenAllFoldsOnFileOpen
-    autocmd!
-    autocmd BufRead * normal zR
-augroup END
-
-" Ultisnip things
-let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
-" IDE like features for ALE
-if v:version >= 800
-  " Format when we save
-  let g:ale_fix_on_save = 1
-  let g:ale_lint_on_enter = 1
-  let g:ale_completion_enabled = 1
-  let g:ale_echo_msg_format = '[%linter%] %s'
-  let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
-
-  nnoremap <silent> K :ALEHover<CR>
-  nnoremap <silent> gd :ALEGoToDefinition<CR>
-
-  " show type on hover
-  if v:version >= 801
-    set balloonevalterm
-    let g:ale_set_balloons = 1
-  endif
-endif
-
-" Vimux settings
-map <Leader>vp :VimuxPromptCommand<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
-
-" NERDTree Settings
-nmap <C-n> :NERDTreeToggle<CR>
-
-" Vimtex settings
-let g:tex_flavor = 'latex'
 
 " Local config
 if filereadable($HOME . "/.vim/vimrc_local")

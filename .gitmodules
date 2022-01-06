@@ -3,31 +3,3 @@
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 	shallow = true
-[submodule "vim/pack/plugins/start/vim-airline"]
-	path = vim/pack/shared-plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-	shallow = true
-[submodule "vim/pack/plugins/start/vim-surround"]
-	path = vim/pack/shared-plugins/start/vim-surround
-	url = https://github.com/tpope/vim-surround
-	shallow = true
-[submodule "vim/pack/plugins/start/bufexplorer"]
-	path = vim/pack/shared-plugins/start/bufexplorer
-	url = https://github.com/jlanzarotta/bufexplorer
-	shallow = true
-[submodule "vim/pack/plugins/start/vim-commentary"]
-	path = vim/pack/shared-plugins/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary
-	shallow = true
-[submodule "vim/pack/plugins/start/delimitmate"]
-	path = vim/pack/shared-plugins/start/delimitmate
-	url = https://github.com/raimondi/delimitmate
-	shallow = true
-[submodule "vim/pack/plugins/start/vim-repeat"]
-	path = vim/pack/shared-plugins/start/vim-repeat
-	url = https://github.com/tpope/vim-repeat
-	shallow = true
-[submodule "vim/pack/plugins/start/vim-sensible"]
-	path = vim/pack/plugins/start/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
-	shallow = true

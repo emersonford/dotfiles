@@ -1,5 +1,6 @@
-require('options')
-require('mappings')
-require('plugins')
-require('lsp')
-require('local')
+require('configs.options')
+require('configs.mappings')
+require('configs.plugins')
+require('configs.lsp')
+
+pcall(require, 'configs.local')

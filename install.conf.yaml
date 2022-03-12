@@ -6,10 +6,9 @@
 
 - link:
     ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vim/vimrc
-    ~/.bash_profile: bash/bash_profile
-    ~/.zprofile: zsh/zprofile
+    ~/.vimrc: vimrc
+    ~/.bash_profile: bash_profile
+    ~/.zprofile: zprofile
     ~/.gitattributes: git/gitattributes
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
@@ -29,15 +28,13 @@
 - create:
     - ~/bin
     - ~/Downloads
-    - nvim/lua/local.lua
 
 - shell:
   - [git pull, Pull latest dotfiles]
   - [git submodule update --init --recursive, Installing submodules]
-  - [curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/bin -y || curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/bin --platform unknown-linux-musl -y, Installing Starship prompt]
+  - [curl -fsSL https://starship.rs/install.sh | sh -s -- -b ~/bin -y || curl -fsSL https://starship.rs/install.sh | sh -s -- -b ~/bin --platform unknown-linux-musl -y, Installing Starship prompt]
   - [curl -L https://raw.githubusercontent.com/mirror/ncurses/master/misc/terminfo.src -O]
   - [tic -xe iTerm2.app terminfo.src, Installing iTerm2.app terminfo]
   - [tic -xe tmux-256color terminfo.src, Installing tmux-256color terminfo]
   - [tic -xe xterm-256color terminfo.src, Installing xterm-256color terminfo]
   - [git clean -f -d -f, Cleanup any dangling files]
-  # - [chsh -s $(which zsh), Set shell to zsh]

@@ -34,8 +34,6 @@ opt.joinspaces = false      -- join lines without two spaces
 
 opt.termguicolors = true    -- allow true colors
 
-opt.inccommand = 'nosplit'  -- show effects of substitute incrementally
-
-opt.mouse = 'a'             -- enable mouse mode
+opt.mouse = "a"             -- enable mouse mode
 
 opt.updatetime = 400        -- decrease time for cursorhold event

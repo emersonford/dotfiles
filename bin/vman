@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# source: https://github.com/jez/vim-superman/blob/master/bin/vman
+
+if [ $# -eq 0 ]; then
+  echo "What manual page do you want?";
+  exit 0
+elif ! man -w "$@" > /dev/null; then
+  # Check that manpage exists to prevent visual noise.
+  exit 1
+fi
+
+nvim -c "SuperMan $*"

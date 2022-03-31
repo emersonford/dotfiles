@@ -20,6 +20,17 @@ set -gx SUDO_EDITOR $EDITOR
 set -gx PAGER (which less)
 set -gx MANPAGER (which less) -X
 
+function vman --wraps man
+  if test (count $argv) -eq 0
+    man
+  else if ! man -w $argv > /dev/null
+    false
+  else 
+    nvim -c "SuperMan $argv"
+  end
+end
+  
+
 set -gx LANG 'en_US.UTF-8'
 set -gx LC_ALL $LANG
 set -gx LANGUAGE $LANG

@@ -137,7 +137,7 @@ return require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = "maintained",
+        ensure_installed = "all",
         highlight = {
           enable = true,
           disable = { "latex" },

@@ -13,12 +13,12 @@ else
 end
 
 # Exports
-set -gx EDITOR (which nvim)
+set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
 set -gx SUDO_EDITOR $EDITOR
 
-set -gx PAGER (which less)
-set -gx MANPAGER (which less) -X
+set -gx PAGER less
+set -gx MANPAGER less -X
 
 function vman --wraps man
   if test (count $argv) -eq 0

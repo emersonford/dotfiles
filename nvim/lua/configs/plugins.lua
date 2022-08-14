@@ -54,16 +54,16 @@ return require("packer").startup(function(use)
         },
         highlights = {
           fill = {
-            guibg = colors.bg_statusline,
+            bg = colors.bg_statusline,
           },
           separator = {
-            guifg = colors.bg_statusline,
+            fg = colors.bg_statusline,
           },
           separator_selected = {
-            guifg = colors.bg_statusline,
+            fg = colors.bg_statusline,
           },
           separator_visible = {
-            guifg = colors.bg_statusline,
+            fg = colors.bg_statusline,
           },
         },
       })

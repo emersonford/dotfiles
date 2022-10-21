@@ -1,17 +1,16 @@
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
 -- Bootstrap Packer
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
+
+local packer_bootstrap = ensure_packer()
 
 -- Run PackerCompile whenever we edit this file with `nvim`.
 vim.cmd([[
@@ -137,8 +136,57 @@ return require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = "all",
-        ignore_install = { "phpdoc" },
+        ensure_installed = {
+          "bash",
+          "c",
+          "c_sharp",
+          "cmake",
+          "comment",
+          "cpp",
+          "css",
+          "cuda",
+          "erlang",
+          "fish",
+          "gitattributes",
+          "go",
+          "gomod",
+          "graphql",
+          "hack",
+          "haskell",
+          "hcl",
+          "help",
+          "hjson",
+          "html",
+          "http",
+          "java",
+          "javascript",
+          "jsdoc",
+          "json",
+          "json5",
+          "jsonc",
+          "kotlin",
+          "latex",
+          "llvm",
+          "lua",
+          "make",
+          "markdown",
+          "markdown_inline",
+          "ocaml",
+          "ocaml_interface",
+          "perl",
+          "php",
+          "python",
+          "query",
+          "regex",
+          "ruby",
+          "rust",
+          "sql",
+          "tlaplus",
+          "toml",
+          "typescript",
+          "vim",
+          "yaml",
+        },
         highlight = {
           enable = true,
           disable = { "latex" },

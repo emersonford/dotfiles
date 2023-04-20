@@ -144,7 +144,6 @@ return require("packer").startup(function(use)
           "comment",
           "cpp",
           "css",
-          "cuda",
           "erlang",
           "fish",
           "gitattributes",
@@ -154,7 +153,6 @@ return require("packer").startup(function(use)
           "hack",
           "haskell",
           "hcl",
-          "help",
           "hjson",
           "html",
           "http",
@@ -185,6 +183,7 @@ return require("packer").startup(function(use)
           "toml",
           "typescript",
           "vim",
+          "vimdoc",
           "yaml",
         },
         highlight = {

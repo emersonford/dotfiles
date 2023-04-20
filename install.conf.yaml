@@ -38,3 +38,4 @@
   - [tic -xe tmux-256color terminfo.src, Installing tmux-256color terminfo]
   - [tic -xe xterm-256color terminfo.src, Installing xterm-256color terminfo]
   - [git clean -f -d -f, Cleanup any dangling files]
+  - [stat nvim/lua/configs/local.lua || touch nvim/lua/configs/local.lua, Creating empty local nvim config file]

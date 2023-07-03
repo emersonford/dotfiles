@@ -467,6 +467,10 @@ return require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "folke/neoconf.nvim"
+  })
+
   -- use 'mfussenegger/nvim-dap'
   -- use 'williamboman/nvim-lsp-installer'
 

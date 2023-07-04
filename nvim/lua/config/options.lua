@@ -33,3 +33,6 @@ vim.diagnostic.config({
     end,
   },
 })
+
+-- Disable LazyVim's default clipboard.
+opt.clipboard = ""

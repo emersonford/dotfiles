@@ -12,3 +12,9 @@ cmd("command WQ wq")
 cmd("command Wq wq")
 cmd("command W w")
 cmd("command Q q")
+
+-- Using Meta/Alt can result in <Esc> being interpreted as Meta/Alt, which makes
+-- for odd behaviors when quickly pressing <Esc> sometimes, so disable Meta chords.
+-- https://github.com/neovim/neovim/issues/20064
+vim.keymap.del({ "n", "i", "v" }, "<A-j>")
+vim.keymap.del({ "n", "i", "v" }, "<A-k>")

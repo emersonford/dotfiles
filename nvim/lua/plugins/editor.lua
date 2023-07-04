@@ -70,4 +70,19 @@ return {
       },
     },
   },
+
+  {
+    "RRethy/vim-illuminate",
+    config = function(plug, opts)
+      -- Using Meta/Alt can result in <Esc> being interpreted as Meta/Alt, which makes
+      -- for odd behaviors when quickly pressing <Esc> sometimes, so disable Meta chords.
+      -- https://github.com/neovim/neovim/issues/20064
+      vim.keymap.del("n", "<A-n>")
+      vim.keymap.del("n", "<A-p>")
+      vim.keymap.del({ "o", "x" }, "<A-i>")
+
+      -- Call LazyVim's config for this plugin.
+      plug._.super.config(plug, opts)
+    end,
+  },
 }

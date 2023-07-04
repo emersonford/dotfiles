@@ -33,7 +33,7 @@
   - [git pull, Pull latest dotfiles]
   - [git submodule update --init --recursive, Installing submodules]
   - [curl -fsSL https://starship.rs/install.sh | sh -s -- -b ~/bin -y || curl -fsSL https://starship.rs/install.sh | sh -s -- -b ~/bin --platform unknown-linux-musl -y, Installing Starship prompt]
-  - [curl -L https://raw.githubusercontent.com/mirror/ncurses/master/misc/terminfo.src -O]
+  - ["curl -L https://raw.githubusercontent.com/mirror/ncurses/$(tic -V | awk '{print $2}' | awk -F'.' '{print \"v\" $1 \".\" $2}')/misc/terminfo.src -O"]
   - [tic -xe iTerm2.app terminfo.src, Installing iTerm2.app terminfo]
   - [tic -xe tmux-256color terminfo.src, Installing tmux-256color terminfo]
   - [tic -xe xterm-256color terminfo.src, Installing xterm-256color terminfo]

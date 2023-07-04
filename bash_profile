@@ -14,8 +14,8 @@
 
 # If fish is found, exec fish.
 if [ -f ~/.config/fish/find_and_exec_fish.sh ]; then
-  source ~/.config/fish/find_and_exec_fish.sh
-  find_and_exec_fish
+	source ~/.config/fish/find_and_exec_fish.sh
+	find_and_exec_fish
 fi
 
 # If we didn't find fish, continue with bash.

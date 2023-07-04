@@ -39,14 +39,14 @@ set colorcolumn=81
 
 " Search settings
 if has("extra_search")
-    " Highlight searches [use :noh to clear]
-    set hlsearch
-    " Highlight dynamically as pattern is typed
-    set incsearch
-    " Ignore case of searches...
-    set ignorecase
-    " ...unless has mixed case
-    set smartcase
+  " Highlight searches [use :noh to clear]
+  set hlsearch
+  " Highlight dynamically as pattern is typed
+  set incsearch
+  " Ignore case of searches...
+  set ignorecase
+  " ...unless has mixed case
+  set smartcase
 endif
 
 " PLUGINS

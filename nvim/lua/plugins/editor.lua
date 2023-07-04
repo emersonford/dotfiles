@@ -51,18 +51,22 @@ return {
     keys = {
       { "<leader>,", false },
       { "<leader><space>", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
+      { "<leader>p", Util.telescope("files"), desc = "Find Files (root)" },
       {
-        "<leader>p",
+        "<leader>P",
         function()
           Util.telescope("files", { cwd = vim.fn.expand("%:p:h") })()
         end,
         desc = "Find Files (cwd)",
       },
-      { "<leader>P", Util.telescope("files"), desc = "Find Files (root)" },
     },
     opts = {
       defaults = {
-        initial_mode = "normal",
+        mappings = {
+          i = {
+            ["<esc>"] = require("telescope.actions").close,
+          },
+        },
       },
     },
   },

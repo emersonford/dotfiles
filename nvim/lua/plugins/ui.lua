@@ -6,8 +6,9 @@ return {
     lazy = false,
     keys = function()
       return {
-        { "gb", "<Cmd>b#<CR>" },
-        { "gq", "<Cmd>BufferLinePickClose<CR>" },
+        { "<leader>bq", "<Cmd>BufferLinePickClose<CR>" },
+        { "<leader>bn", "<Cmd>BufferLineCycleNext<CR>" },
+        { "<leader>bp", "<Cmd>BufferLineCyclePrev<CR>" },
       }
     end,
     opts = {
@@ -29,6 +30,23 @@ return {
           fg = colors.bg_statusline,
         },
       },
+    },
+  },
+
+  {
+    "rcarriga/nvim-notify",
+    keys = {
+      {
+        "<leader>uh",
+        function()
+          require("telescope").load_extension("notify")
+          require("telescope").extensions.notify.notify()
+        end,
+        desc = "View messages history",
+      },
+    },
+    opts = {
+      timeout = 5000,
     },
   },
 }

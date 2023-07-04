@@ -5,4 +5,9 @@ return {
       return {}
     end,
   },
+
+  {
+    "catppuccin/nvim",
+    enabled = false,
+  },
 }

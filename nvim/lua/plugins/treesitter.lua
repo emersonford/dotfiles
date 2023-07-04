@@ -25,6 +25,7 @@ return {
         "javascript",
         "jsdoc",
         "json",
+        "jsonc",
         "kotlin",
         "latex",
         "lua",

@@ -7,4 +7,15 @@ return {
       vim.g.vista_default_executive = "nvim_lsp"
     end,
   },
+
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        rust_analyzer = {
+          cmd = { "rustup", "run", "stable", "rust-analyzer" },
+        },
+      },
+    },
+  },
 }

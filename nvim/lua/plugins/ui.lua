@@ -1,5 +1,3 @@
-local colors = require("tokyonight.colors").setup({})
-
 return {
   {
     "akinsho/bufferline.nvim",
@@ -18,16 +16,28 @@ return {
       },
       highlights = {
         fill = {
-          bg = colors.bg_statusline,
+          bg = {
+            attribute = "bg",
+            highlight = "StatusLine",
+          },
         },
         separator = {
-          fg = colors.bg_statusline,
+          fg = {
+            attribute = "bg",
+            highlight = "StatusLine",
+          },
         },
         separator_selected = {
-          fg = colors.bg_statusline,
+          fg = {
+            attribute = "bg",
+            highlight = "StatusLine",
+          },
         },
         separator_visible = {
-          fg = colors.bg_statusline,
+          fg = {
+            attribute = "bg",
+            highlight = "StatusLine",
+          },
         },
       },
     },
@@ -44,9 +54,6 @@ return {
         end,
         desc = "View messages history",
       },
-    },
-    opts = {
-      timeout = 5000,
     },
   },
 }

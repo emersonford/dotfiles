@@ -2,12 +2,9 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = function()
-      return {}
+      return {
+        style = "storm",
+      }
     end,
-  },
-
-  {
-    "catppuccin/nvim",
-    enabled = false,
   },
 }

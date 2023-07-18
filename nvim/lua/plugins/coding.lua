@@ -9,6 +9,11 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
+      -- Require at least one tab before tab completing.
+      opts.completion = {
+        completeopt = "menu,menuone,noselect",
+      }
+
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -28,6 +33,7 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
       })
     end,
   },

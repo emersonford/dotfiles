@@ -20,5 +20,10 @@ opt.joinspaces = false -- join lines without two spaces
 -- Disable LazyVim's default clipboard.
 opt.clipboard = ""
 
+-- Autocomplete the first result in CMD mode.
+opt.wildmode = "full"
+
+opt.wrap = true
+
 -- Require this at the end so local settings take highest precedence.
 require("config.local")

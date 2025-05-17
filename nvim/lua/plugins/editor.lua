@@ -25,19 +25,17 @@ return {
       -- Insert at the start => if these keymaps already exist, don't override.
       table.insert(keys, 1, {
         "<leader>p",
-        require("lazyvim.util").telescope("files"),
+        LazyVim.pick("files"),
         desc = "Find Files (root)",
       })
 
       -- Insert at the end => override these keymaps even if they exist.
-      vim.list_extend(keys, {
+      return vim.list_extend(keys, {
         { "<leader>,", false },
-        { "<leader><space>", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
+        { "<leader><space>", "<cmd>Telescope buffers sort_mru=true sort_lastused=true ignore_current_buffer=true<cr>" },
         {
           "<leader>P",
-          function()
-            require("lazyvim.util").telescope("files", { cwd = vim.fn.expand("%:p:h") })()
-          end,
+          LazyVim.pick("files", { root = false }),
           desc = "Find Files (cwd)",
         },
       })
@@ -51,20 +49,5 @@ return {
         },
       },
     },
-  },
-
-  {
-    "RRethy/vim-illuminate",
-    config = function(plug, opts)
-      -- Using Meta/Alt can result in <Esc> being interpreted as Meta/Alt, which makes
-      -- for odd behaviors when quickly pressing <Esc> sometimes, so disable Meta chords.
-      -- https://github.com/neovim/neovim/issues/20064
-      vim.keymap.del("n", "<A-n>")
-      vim.keymap.del("n", "<A-p>")
-      vim.keymap.del({ "o", "x" }, "<A-i>")
-
-      -- Call LazyVim's config for this plugin.
-      plug._.super.config(plug, opts)
-    end,
   },
 }

@@ -7,4 +7,3 @@ fish/fish_variables
 terminfo.src
 karabiner/automatic_backups/*
 nvim/lazy-lock.json
-nvim/lazyvim.json

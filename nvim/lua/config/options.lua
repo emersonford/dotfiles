@@ -20,6 +20,8 @@ opt.joinspaces = false -- join lines without two spaces
 -- Disable LazyVim's default clipboard.
 opt.clipboard = ""
 
+vim.g.lazyvim_picker = "telescope"
+
 -- Autocomplete the first result in CMD mode.
 opt.wildmode = "full"
 

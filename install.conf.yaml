@@ -24,6 +24,7 @@
     ~/.config/starship.toml:
       path: starship.toml
       create: true
+    ~/.wezterm.lua: wezterm.lua
 
 - create:
     - ~/bin

@@ -20,12 +20,13 @@ opt.joinspaces = false -- join lines without two spaces
 -- Disable LazyVim's default clipboard.
 opt.clipboard = ""
 
-vim.g.lazyvim_picker = "telescope"
-
 -- Autocomplete the first result in CMD mode.
 opt.wildmode = "full"
 
 opt.wrap = true
+
+vim.g.lazyvim_picker = "telescope"
+vim.lsp.inlay_hint.enable(false)
 
 -- Require this at the end so local settings take highest precedence.
 require("config.local")

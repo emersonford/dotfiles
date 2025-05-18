@@ -35,7 +35,7 @@ return {
         { "<leader><space>", "<cmd>Telescope buffers sort_mru=true sort_lastused=true ignore_current_buffer=true<cr>" },
         {
           "<leader>P",
-          LazyVim.pick("files", { root = false }),
+          LazyVim.pick("files", { cwd = vim.fn.expand("%:p:h") }),
           desc = "Find Files (cwd)",
         },
       })

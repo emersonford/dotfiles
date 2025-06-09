@@ -5,6 +5,11 @@ return {
       keymap = {
         preset = "super-tab",
       },
+      completion = {
+        ghost_text = {
+          enabled = false,
+        },
+      },
     },
   },
 }
